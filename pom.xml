@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+	<artifactId>finerleague</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<application.version>0.0.1-SNAPSHOT</application.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+
+		<tomcat-jdbc.version>8.0.15</tomcat-jdbc.version>
+
+		<!-- SPRING -->
+		<spring-boot.version>1.4.2.RELEASE</spring-boot.version>
+		<!-- LOGGER -->
+		<slf4j.version>1.7.6</slf4j.version>
+	</properties>
+
+	<modules>
+		<module>finerleague-rest</module>
+		<module>finerleague-common</module>
+		<module>finerleague-application</module>
+		<module>finerleague-data</module>
+		<module>finerleague-core</module>
+	</modules>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- INTERNAL DEPENDENCIES -->
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-data-dao</artifactId>
+				<version>${application.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-data-entity</artifactId>
+				<version>${application.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-common-domain</artifactId>
+				<version>${application.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-core</artifactId>
+				<version>${application.version}</version>
+			</dependency>
+
+			<!-- SPRING -->
+
+			<!-- SPRING BOOT -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.tomcat</groupId>
+				<artifactId>tomcat-jdbc</artifactId>
+				<version>${tomcat-jdbc.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-jdbc</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-jpa</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<!-- LOGGER -->
+			<!-- Logger -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+</project>
