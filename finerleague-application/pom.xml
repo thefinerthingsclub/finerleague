@@ -10,11 +10,16 @@
 	</parent>
 
 	<artifactId>finerleague-application</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 
 	<dependencies>
+		<!-- INTERNAL -->
+		<dependency>
+			<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+			<artifactId>finerleague-rest</artifactId>
+		</dependency>
+
 		<!-- SPRING BOOT -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -35,6 +40,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- TESTING -->
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-core</artifactId>
 		</dependency>
 	</dependencies>
 </project>
