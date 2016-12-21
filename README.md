@@ -6,3 +6,6 @@ Respetar la arquitectura de módulos.Añadir las dependencias siempre al pom pad
 
 ###DOCS
 En esta carpeta dejaremos documentación relativa al proyecto, técnica, funcional, de referencia, manuales o cualquier otra cosa que se nos vaya ocurriendo.
+
+## Technical Information
+![Architecture](/docs/finerleaguearchitecture_480.png)
