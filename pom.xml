@@ -26,6 +26,8 @@
         <powermock.version>1.6.6</powermock.version>
         <cglib-nodep.version>3.2.4</cglib-nodep.version>
         <spring.version>4.3.5.RELEASE</spring.version>
+        <hikariCP.version>2.5.1</hikariCP.version>
+        <h2.version>1.4.193</h2.version>
     </properties>
 
     <modules>
@@ -111,6 +113,19 @@
                 <version>${spring-boot.version}</version>
             </dependency>
 
+            <!-- DATABASE -->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikariCP.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+            </dependency>
+
             <!-- LOGGER -->
             <!-- Logger -->
             <dependency>
@@ -181,4 +196,28 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>local</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>ci</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
 </project>

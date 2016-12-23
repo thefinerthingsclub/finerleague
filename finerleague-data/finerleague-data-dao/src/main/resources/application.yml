@@ -1,0 +1,36 @@
+spring:
+  profiles: local
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:~/finerleaguelocal
+    driver-class-name: org.h2.Driver
+    username: username
+    password: password
+    hikari:
+      idle-timeout: 10000
+
+---
+
+spring:
+  profiles: default
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:~/finerleaguedefault
+    driver-class-name: org.h2.Driver
+    username: username
+    password: password
+    hikari:
+      idle-timeout: 10000
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:~/finerleagueprod
+    driver-class-name: org.h2.Driver
+    username: username
+    password: password
+    hikari:
+      idle-timeout: 10000
