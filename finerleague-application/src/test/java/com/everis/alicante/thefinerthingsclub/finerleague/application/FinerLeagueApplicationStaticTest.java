@@ -27,7 +27,7 @@ public class FinerLeagueApplicationStaticTest {
     @Test
     public void testMain() throws Exception {
         // Arrange
-        String[] args = {};
+        final String[] args = {};
         PowerMockito.mockStatic(SpringApplication.class);
         PowerMockito.when(SpringApplication.class, "run", FinerLeagueApplication.class, args).thenReturn(PowerMockito.mock(ConfigurableApplicationContext.class));
 
