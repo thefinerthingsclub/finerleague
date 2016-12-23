@@ -44,7 +44,7 @@ public class FinerLeagueApplication extends SpringBootServletInitializer {
 	 */
 	@PostConstruct
 	public void init() {
-		logger.info("Initializing FinerApplication...");
+		logger.info("Initializing FinerLeague Application...");
 	}
 
 	/* (non-Javadoc)
