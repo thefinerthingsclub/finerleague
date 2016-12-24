@@ -75,6 +75,12 @@
                 <version>${spring.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
             <!-- SPRING BOOT -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -111,6 +117,20 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-jpa</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- mongodb java driver -->
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>2.11.0</version>
+            </dependency>
+
+            <!-- Spring data mongodb -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-mongodb</artifactId>
+                <version>1.2.0.RELEASE</version>
             </dependency>
 
             <!-- DATABASE -->
