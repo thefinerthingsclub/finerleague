@@ -20,15 +20,34 @@
             <artifactId>finerleague-data-entity</artifactId>
         </dependency>
 
-        <!-- DATABASE -->
+        <!-- SPRING -->
         <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <!-- Spring data mongodb -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+        </dependency>
+
+        <!-- DATABASE -->
+        <!-- mongodb java driver -->
+        <!--<dependency>-->
+            <!--<groupId>org.mongodb</groupId>-->
+            <!--<artifactId>mongo-java-driver</artifactId>-->
+        <!--</dependency>-->
+
+        <!-- Embeded Mongo -->
+        <dependency>
+            <groupId>cz.jirutka.spring</groupId>
+            <artifactId>embedmongo-spring</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo</artifactId>
         </dependency>
 
     </dependencies>

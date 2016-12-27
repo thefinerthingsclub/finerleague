@@ -16,18 +16,19 @@
 
 
         <tomcat-jdbc.version>8.0.15</tomcat-jdbc.version>
-
         <!-- SPRING -->
         <spring-boot.version>1.4.2.RELEASE</spring-boot.version>
+        <spring.version>4.3.5.RELEASE</spring.version>
+        <spring-data-mongodb.version>1.9.6.RELEASE</spring-data-mongodb.version>
         <!-- LOGGER -->
         <slf4j.version>1.7.6</slf4j.version>
         <!-- TESTING -->
         <spock.version>1.0-groovy-2.4</spock.version>
         <powermock.version>1.6.6</powermock.version>
         <cglib-nodep.version>3.2.4</cglib-nodep.version>
-        <spring.version>4.3.5.RELEASE</spring.version>
-        <hikariCP.version>2.5.1</hikariCP.version>
-        <h2.version>1.4.193</h2.version>
+        <!-- DATABASE -->
+        <embedmongo-spring.version>1.3.1</embedmongo-spring.version>
+        <flapdoodle.version>1.50.5</flapdoodle.version>
     </properties>
 
     <modules>
@@ -115,36 +116,38 @@
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
 
             <!-- mongodb java driver -->
-            <dependency>
-                <groupId>org.mongodb</groupId>
-                <artifactId>mongo-java-driver</artifactId>
-                <version>2.11.0</version>
-            </dependency>
+            <!--<dependency>-->
+            <!--<groupId>org.mongodb</groupId>-->
+            <!--<artifactId>mongo-java-driver</artifactId>-->
+            <!--<version>2.11.0</version>-->
+            <!--</dependency>-->
 
             <!-- Spring data mongodb -->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb</artifactId>
-                <version>1.2.0.RELEASE</version>
+                <version>${spring-data-mongodb.version}</version>
             </dependency>
 
             <!-- DATABASE -->
+            <!-- Embeded Mongo -->
             <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>${hikariCP.version}</version>
+                <groupId>cz.jirutka.spring</groupId>
+                <artifactId>embedmongo-spring</artifactId>
+                <version>${embedmongo-spring.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>${h2.version}</version>
+                <groupId>de.flapdoodle.embed</groupId>
+                <artifactId>de.flapdoodle.embed.mongo</artifactId>
+                <version>${flapdoodle.version}</version>
             </dependency>
+
 
             <!-- LOGGER -->
             <!-- Logger -->
@@ -176,7 +179,6 @@
                 <scope>test</scope>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/cglib/cglib-nodep -->
             <dependency>
                 <groupId>cglib</groupId>
                 <artifactId>cglib-nodep</artifactId>
