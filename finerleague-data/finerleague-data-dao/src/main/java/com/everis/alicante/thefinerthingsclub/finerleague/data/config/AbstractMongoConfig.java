@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import javax.annotation.PostConstruct;
 
@@ -12,6 +13,7 @@ import javax.annotation.PostConstruct;
  * The Abstract Mongo Configuration
  */
 @ConfigurationProperties(FinerLeagueConfigurationConstants.APPLICATION_PROPERTIES_DATABASE)
+@EnableMongoRepositories({"com.everis.alicante.thefinerthingsclub.finerleague.data.dao"})
 public abstract class AbstractMongoConfig extends AbstractMongoConfiguration {
 
     /**

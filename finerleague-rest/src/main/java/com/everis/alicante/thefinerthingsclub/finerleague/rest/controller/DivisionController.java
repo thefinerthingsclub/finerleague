@@ -27,7 +27,7 @@ public class DivisionController {
      *
      * @return the response entity
      */
-    @RequestMapping(value = "filter", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<Division>> findAll() {
         return new ResponseEntity(divisionManager.findAll(), HttpStatus.OK);
