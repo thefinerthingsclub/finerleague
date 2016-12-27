@@ -1,8 +1,12 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.config;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.FinerLeagueConfigurationConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+
+import javax.annotation.PostConstruct;
 
 /**
  * The Abstract Mongo Configuration
@@ -11,9 +15,14 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 public abstract class AbstractMongoConfig extends AbstractMongoConfiguration {
 
     /**
+     * The logger
+     */
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    /**
      * The database Name
      */
-    private String dabaseName;
+    private String databaseName;
 
     /**
      * The database URI
@@ -25,28 +34,24 @@ public abstract class AbstractMongoConfig extends AbstractMongoConfiguration {
      */
     private Integer dabasePort;
 
+    @PostConstruct
+    public void init() {
+        logger.info(String.format("Mongo Configuration: databaseName [%s], databasePort [%s], databaseURI [%s], ", this.getDatabaseName(), this.getDabasePort(), this.getDabaseURI()));
+    }
+
+
     @Override
     public String getDatabaseName() {
-        return dabaseName;
-    }
-
-
-    /**
-     * DatabaseName getter
-     *
-     * @return the dataBaseName value
-     */
-    public String getDabaseName() {
-        return dabaseName;
+        return databaseName;
     }
 
     /**
      * DatabaseName getter
      *
-     * @param dabaseName the dataBaseName value
+     * @param databaseName the dataBaseName value
      */
-    public void setDabaseName(String dabaseName) {
-        this.dabaseName = dabaseName;
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
     }
 
     /**
