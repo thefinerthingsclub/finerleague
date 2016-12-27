@@ -38,7 +38,7 @@ public abstract class AbstractMongoConfig extends AbstractMongoConfiguration {
 
     @PostConstruct
     public void init() {
-        logger.info(String.format("Mongo Configuration: databaseName [%s], databasePort [%s], databaseURI [%s], ", this.getDatabaseName(), this.getDabasePort(), this.getDabaseURI()));
+        logger.info(String.format("Mongo Configuration [%s]: databaseName [%s], databasePort [%s], databaseURI [%s], ", this.getClass().getSimpleName(), this.getDatabaseName(), this.getDabasePort(), this.getDabaseURI()));
     }
 
 
