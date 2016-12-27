@@ -1,6 +1,5 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.application
 
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.builder.SpringApplicationBuilder
 import spock.lang.Specification
 
