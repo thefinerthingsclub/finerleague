@@ -1,6 +1,6 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.core.manager;
 
-import com.everis.alicante.thefinerthingsclub.finerleague.data.dao.DivisionDAO;
+import com.everis.alicante.thefinerthingsclub.finerleague.data.dao.DivisionRepository;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Division;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import java.util.List;
 public class DivisionManager {
 
     @Autowired
-    private DivisionDAO divisionDAO;
+    private DivisionRepository divisionRepository;
 
     /**
      * Find all list.
@@ -22,7 +22,7 @@ public class DivisionManager {
      * @return the list
      */
     public List<Division> findAll() {
-        return divisionDAO.findAll();
+        return divisionRepository.findAll();
     }
 
     /**
@@ -31,8 +31,8 @@ public class DivisionManager {
      * @param id the id
      * @return the division
      */
-    public Division findOne(String id) {
-        return divisionDAO.findOne(id);
+    public Division findOne(final String id) {
+        return divisionRepository.findOne(id);
 
     }
 
@@ -42,8 +42,8 @@ public class DivisionManager {
      * @param id the id
      * @return the boolean
      */
-    public boolean exists(String id) {
-        return divisionDAO.exists(id);
+    public boolean exists(final String id) {
+        return divisionRepository.exists(id);
     }
 
     /**
@@ -51,8 +51,8 @@ public class DivisionManager {
      *
      * @param id the id
      */
-    public void delete(String id) {
-        divisionDAO.delete(id);
+    public void delete(final String id) {
+        divisionRepository.delete(id);
     }
 
     /**
@@ -62,6 +62,6 @@ public class DivisionManager {
      * @return the division
      */
     public Division save(final Division division) {
-        return divisionDAO.save(division);
+        return divisionRepository.save(division);
     }
 }

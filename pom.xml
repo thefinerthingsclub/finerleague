@@ -30,8 +30,8 @@
         <flapdoodle.version>1.50.5</flapdoodle.version>
 
         <!-- OTHERS -->
-        <commons-beanutils.version>1.9.3</commons-beanutils.version>
         <swagger2.version>2.6.1</swagger2.version>
+        <modelmapper.version>0.7.7</modelmapper.version>
     </properties>
 
     <modules>
@@ -195,13 +195,6 @@
                 <scope>test</scope>
             </dependency>
 
-            <!-- COMMONS -->
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>${commons-beanutils.version}</version>
-            </dependency>
-
             <!-- Swagger - Springfox -->
             <dependency>
                 <groupId>io.springfox</groupId>
@@ -213,6 +206,13 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger2.version}</version>
+            </dependency>
+
+            <!-- MODEL MAPPER -->
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>${modelmapper.version}</version>
             </dependency>
 
 
