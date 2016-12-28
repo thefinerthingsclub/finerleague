@@ -5,8 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * The type Team.
  */
-@Document(collection = "teams")
-public class Team {
+public class Team implements EntityDocument{
 
     private String id;
 

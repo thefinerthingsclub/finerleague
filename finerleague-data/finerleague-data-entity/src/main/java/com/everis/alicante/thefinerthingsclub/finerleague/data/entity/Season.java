@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * The type Season.
  */
-public class Season {
+public class Season implements EntityDocument{
 
     private String id;
 

@@ -1,27 +1,38 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller;
 
+import com.everis.alicante.thefinerthingsclub.finerleague.core.manager.AbstractManager;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.EntityDocument;
-import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerDTO;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
  * The type Abstract controller.
  *
- * @param <T> the DTO Type parameter
+ * @param <O> the DTO Type parameter
  * @param <E> the Entity Type parameter
  */
-public class AbstractController<T extends ControllerDTO, E extends EntityDocument> {
+public class AbstractController<M extends AbstractManager, O extends ControllerObjectDTO, E extends EntityDocument> {
 
-    private Class<T> dtoClass;
+    private M manager;
+
+    private Class<O> dtoClass;
 
     private Class<E> entityClass;
 
     @Autowired
     private ModelMapper modelMapper;
+
 
     /**
      * Instantiates a new Abstract controller.
@@ -29,10 +40,39 @@ public class AbstractController<T extends ControllerDTO, E extends EntityDocumen
      * @param dtoClass    the repository class
      * @param entityClass the entity class
      */
-    protected AbstractController(final Class<T> dtoClass, final Class<E> entityClass) {
+    protected AbstractController(final M managerClass, final Class<O> dtoClass, final Class<E> entityClass) {
         this.dtoClass = dtoClass;
         this.entityClass = entityClass;
+        this.manager = managerClass;
     }
+
+
+    /**
+     * Find all response entity.
+     *
+     * @return the response entity
+     */
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<List<O>> findAll() throws InvocationTargetException, IllegalAccessException {
+        return new ResponseEntity(this.convertToDto(this.manager.findAll()), HttpStatus.OK);
+    }
+
+    /**
+     * Save response entity.
+     *
+     * @param dto the division repository
+     * @return the response entity
+     * @throws InvocationTargetException the invocation target exception
+     * @throws IllegalAccessException    the illegal access exception
+     */
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity<O> save(final O dto) throws InvocationTargetException, IllegalAccessException {
+        final E newEntity = (E) this.manager.save(this.convertToEntity(dto));
+        return new ResponseEntity(this.convertToDto(newEntity), HttpStatus.CREATED);
+    }
+
 
     /**
      * Convert to repository t.
@@ -40,7 +80,7 @@ public class AbstractController<T extends ControllerDTO, E extends EntityDocumen
      * @param entity the entity
      * @return the t
      */
-    protected T convertToDto(final E entity) {
+    protected O convertToDto(final E entity) {
         return this.convertFromInstanceToClass(entity, dtoClass);
     }
 
@@ -50,7 +90,7 @@ public class AbstractController<T extends ControllerDTO, E extends EntityDocumen
      * @param dto the repository
      * @return the e
      */
-    protected E convertToEntity(final T dto) {
+    protected E convertToEntity(final O dto) {
         return this.convertFromInstanceToClass(dto, entityClass);
     }
 
@@ -72,7 +112,7 @@ public class AbstractController<T extends ControllerDTO, E extends EntityDocumen
      * @param entityCollection the entity list
      * @return the collection
      */
-    protected Collection<T> convertToDto(final Collection<E> entityCollection) {
+    protected Collection<O> convertToDto(final Collection<E> entityCollection) {
         return entityCollection.stream()
                 .map(entity -> convertToDto(entity)).collect(Collectors.toList());
     }
@@ -83,7 +123,7 @@ public class AbstractController<T extends ControllerDTO, E extends EntityDocumen
      * @param dtoList the repository list
      * @return the collection
      */
-    protected Collection<E> convertToEntity(final Collection<T> dtoList) {
+    protected Collection<E> convertToEntity(final Collection<O> dtoList) {
         return dtoList.stream()
                 .map(dto -> convertToEntity(dto)).collect(Collectors.toList());
     }

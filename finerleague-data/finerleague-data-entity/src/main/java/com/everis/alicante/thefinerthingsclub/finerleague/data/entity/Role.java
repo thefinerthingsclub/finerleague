@@ -5,8 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * The type Role.
  */
-@Document(collection = "roles")
-public class Role {
+public class Role implements EntityDocument {
 
     private String id;
 

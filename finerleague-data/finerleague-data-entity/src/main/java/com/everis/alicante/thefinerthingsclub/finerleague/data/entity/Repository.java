@@ -1,13 +1,11 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * The type Repository.
  */
-@Document(collection = "repositories")
-public class Repository {
+public class Repository implements EntityDocument {
 
     @Id
     private String id;

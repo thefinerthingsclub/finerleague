@@ -5,5 +5,5 @@ import java.io.Serializable;
 /**
  * The interface Controller dto.
  */
-public interface ControllerDTO extends Serializable {
+public interface ControllerObjectDTO extends Serializable {
 }

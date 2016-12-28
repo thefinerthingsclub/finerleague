@@ -1,4 +1,4 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.data.dao;
+package com.everis.alicante.thefinerthingsclub.finerleague.data.repository;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Person;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Team;

@@ -13,15 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/team")
-public class TeamController extends AbstractController<TeamDTO, Team> {
-
-    @Autowired
-    private TeamManager teamManager;
+public class TeamController extends AbstractController<TeamManager, TeamDTO, Team> {
 
     /**
      * Instantiates a new Team controller.
      */
-    protected TeamController() { super(TeamDTO.class, Team.class);}
-
+    @Autowired
+    public TeamController(final TeamManager teamManager) {
+        super(teamManager, TeamDTO.class, Team.class);
+    }
 
 }

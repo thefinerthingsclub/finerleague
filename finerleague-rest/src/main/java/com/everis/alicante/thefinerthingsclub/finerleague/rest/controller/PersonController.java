@@ -2,6 +2,7 @@ package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.core.manager.PersonManager;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Person;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.repository.PersonDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,33 +18,16 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/person")
-public class PersonController {
+public class PersonController extends AbstractController<PersonManager, PersonDTO, Person> {
 
+    /**
+     * Instantiates a new Person controller.
+     *
+     * @param personManager the person manager
+     */
     @Autowired
-    private PersonManager personManager;
-
-    /**
-     * Find all response entity.
-     *
-     * @return the response entity
-     */
-    @RequestMapping(value = "filter", method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity<List<Person>> findAll() {
-        return new ResponseEntity(personManager.findAll(), HttpStatus.OK);
+    public PersonController(final PersonManager personManager) {
+        super(personManager, PersonDTO.class, Person.class);
     }
 
-    /**
-     * Save response entity.
-     *
-     * @return the response entity
-     */
-    @RequestMapping(method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity<Person> save() {
-        Person person = new Person();
-        person.setName("Name1");
-        person.setEmail("email@email.com");
-        return new ResponseEntity(personManager.save(person), HttpStatus.CREATED);
-    }
 }

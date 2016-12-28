@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * The type Game.
  */
 @Document(collection = "games")
-public class Game {
+public class Game implements EntityDocument {
 
     @Id
     private String id;

@@ -11,11 +11,15 @@ import java.util.List;
  * The type Division manager.
  */
 @Service
-public class DivisionManager extends AbstractManager<DivisionRepository> {
+public class DivisionManager extends AbstractManager<DivisionRepository, Division, String> {
 
-    public DivisionManager(final DivisionRepository divisionRepository) {
-        super(divisionRepository);
+    /**
+     * Instantiates a new Division manager.
+     *
+     * @param repository the repository
+     */
+    @Autowired
+    public DivisionManager(final DivisionRepository repository) {
+        super(repository);
     }
-
-
 }

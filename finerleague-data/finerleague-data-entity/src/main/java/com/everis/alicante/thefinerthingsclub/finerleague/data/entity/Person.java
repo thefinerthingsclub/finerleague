@@ -1,15 +1,11 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.PersistenceConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
  * The type Person.
  */
-@Document(collection = "persons")
-public class Person {
+public class Person implements EntityDocument {
 
     @Id
     private String id;

@@ -1,9 +1,11 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
 
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
+
 /**
  * The type Division repository.
  */
-public class DivisionDTO implements ControllerDTO {
+public class DivisionDTO implements ControllerObjectDTO {
 
     private static final long serialVersionUID = -619125399420154250L;
 

@@ -1,37 +1,55 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.core.manager;
 
-import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Division;
+import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.EntityDocument;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AbstractManager<T extends MongoRepository, E extends > {
 
-    private T repository;
+/**
+ * The type Abstract manager.
+ *
+ * @param <R>  the type parameter
+ * @param <E>  the type parameter
+ * @param <ID> the type parameter
+ */
+public class AbstractManager<R extends MongoRepository<E, ID>, E extends EntityDocument, ID extends Serializable> {
 
-    protected AbstractManager(final T repository) {
+    private R repository;
+
+
+    /**
+     * Instantiates a new Abstract manager.
+     *
+     * @param repository the repository
+     */
+    protected AbstractManager(final R repository) {
         this.repository = repository;
     }
+
 
     /**
      * Find all list.
      *
      * @return the list
      */
-    public List<Division> findAll() {
+    public List<E> findAll() {
         return repository.findAll();
     }
 
+
     /**
-     * Find one division.
+     * Find one t.
      *
      * @param id the id
-     * @return the division
+     * @return the t
      */
-    public Division findOne(final String id) {
+    public E findOne(final ID id) {
         return repository.findOne(id);
 
     }
+
 
     /**
      * Exists boolean.
@@ -39,25 +57,27 @@ public class AbstractManager<T extends MongoRepository, E extends > {
      * @param id the id
      * @return the boolean
      */
-    public boolean exists(final String id) {
+    public boolean exists(final ID id) {
         return repository.exists(id);
     }
+
 
     /**
      * Delete.
      *
      * @param id the id
      */
-    public void delete(final String id) {
+    public void delete(final ID id) {
         repository.delete(id);
     }
 
     /**
-     * Save division.
+     * Save t.
      *
-     * @param division the division
-     * @return the division
+     * @param entity the entity
+     * @return the t
      */
-    public Division save(final Division division) {
-        return repository.save(division);
-    }}
+    public E save(final E entity) {
+        return repository.save(entity);
+    }
+}

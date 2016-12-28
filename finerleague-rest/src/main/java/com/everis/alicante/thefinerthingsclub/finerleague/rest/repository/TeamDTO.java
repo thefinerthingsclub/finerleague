@@ -1,11 +1,11 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
 
-import java.io.Serializable;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
 
 /**
  * The type Division repository.
  */
-public class TeamDTO implements Serializable {
+public class TeamDTO implements ControllerObjectDTO {
 
     private static final long serialVersionUID = -619125399420154253L;
 
