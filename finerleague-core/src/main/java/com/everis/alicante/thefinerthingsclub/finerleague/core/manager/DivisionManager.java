@@ -11,57 +11,11 @@ import java.util.List;
  * The type Division manager.
  */
 @Service
-public class DivisionManager {
+public class DivisionManager extends AbstractManager<DivisionRepository> {
 
-    @Autowired
-    private DivisionRepository divisionRepository;
-
-    /**
-     * Find all list.
-     *
-     * @return the list
-     */
-    public List<Division> findAll() {
-        return divisionRepository.findAll();
+    public DivisionManager(final DivisionRepository divisionRepository) {
+        super(divisionRepository);
     }
 
-    /**
-     * Find one division.
-     *
-     * @param id the id
-     * @return the division
-     */
-    public Division findOne(final String id) {
-        return divisionRepository.findOne(id);
 
-    }
-
-    /**
-     * Exists boolean.
-     *
-     * @param id the id
-     * @return the boolean
-     */
-    public boolean exists(final String id) {
-        return divisionRepository.exists(id);
-    }
-
-    /**
-     * Delete.
-     *
-     * @param id the id
-     */
-    public void delete(final String id) {
-        divisionRepository.delete(id);
-    }
-
-    /**
-     * Save division.
-     *
-     * @param division the division
-     * @return the division
-     */
-    public Division save(final Division division) {
-        return divisionRepository.save(division);
-    }
 }

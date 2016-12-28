@@ -24,7 +24,7 @@ public class AbstractController<T, E> {
     /**
      * Instantiates a new Abstract controller.
      *
-     * @param dtoClass    the dto class
+     * @param dtoClass    the repository class
      * @param entityClass the entity class
      */
     protected AbstractController(final Class<T> dtoClass, final Class<E> entityClass) {
@@ -33,7 +33,7 @@ public class AbstractController<T, E> {
     }
 
     /**
-     * Convert to dto t.
+     * Convert to repository t.
      *
      * @param entity the entity
      * @return the t
@@ -45,7 +45,7 @@ public class AbstractController<T, E> {
     /**
      * Convert to entity e.
      *
-     * @param dto the dto
+     * @param dto the repository
      * @return the e
      */
     protected E convertToEntity(final T dto) {
@@ -65,7 +65,7 @@ public class AbstractController<T, E> {
     }
 
     /**
-     * Convert to dto collection.
+     * Convert to repository collection.
      *
      * @param entityList the entity list
      * @return the collection
@@ -78,7 +78,7 @@ public class AbstractController<T, E> {
     /**
      * Convert to entity collection.
      *
-     * @param dtoList the dto list
+     * @param dtoList the repository list
      * @return the collection
      */
     protected Collection<E> convertToEntity(final Collection<T> dtoList) {

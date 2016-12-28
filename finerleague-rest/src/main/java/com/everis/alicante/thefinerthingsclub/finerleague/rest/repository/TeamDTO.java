@@ -1,19 +1,17 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
 
 import java.io.Serializable;
 
 /**
- * The type Division dto.
+ * The type Division repository.
  */
-public class DivisionDTO implements Serializable {
+public class TeamDTO implements Serializable {
 
-    private static final long serialVersionUID = -619125399420154250L;
+    private static final long serialVersionUID = -619125399420154253L;
 
     private String id;
 
     private String name;
-
-    private Integer priority;
 
     /**
      * Gets id.
@@ -51,30 +49,11 @@ public class DivisionDTO implements Serializable {
         this.name = name;
     }
 
-    /**
-     * Gets priority.
-     *
-     * @return the priority
-     */
-    public Integer getPriority() {
-        return priority;
-    }
-
-    /**
-     * Sets priority.
-     *
-     * @param priority the priority
-     */
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
     @Override
     public String toString() {
-        return "DivisionDTO{" +
+        return "TeamDTO{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", priority=" + priority +
                 '}';
     }
 }

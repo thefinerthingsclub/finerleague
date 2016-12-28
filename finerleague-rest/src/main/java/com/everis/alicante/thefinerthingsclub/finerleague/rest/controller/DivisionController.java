@@ -2,7 +2,7 @@ package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.core.manager.DivisionManager;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Division;
-import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.DivisionDTO;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.repository.DivisionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,7 +45,7 @@ public class DivisionController extends AbstractController<DivisionDTO, Division
     /**
      * Save response entity.
      *
-     * @param divisionDTO the division dto
+     * @param divisionDTO the division repository
      * @return the response entity
      * @throws InvocationTargetException the invocation target exception
      * @throws IllegalAccessException    the illegal access exception
