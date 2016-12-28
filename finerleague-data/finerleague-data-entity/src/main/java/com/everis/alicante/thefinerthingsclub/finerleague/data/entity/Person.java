@@ -1,17 +1,18 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto;
+package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
+
+import org.springframework.data.annotation.Id;
 
 /**
- * The type Division dto.
+ * The type Person.
  */
-public class DivisionDTO implements ControllerDTO {
+public class Person implements EntityDocument {
 
-    private static final long serialVersionUID = -619125399420154250L;
-
+    @Id
     private String id;
 
     private String name;
 
-    private Integer priority;
+    private String email;
 
     /**
      * Gets id.
@@ -50,29 +51,29 @@ public class DivisionDTO implements ControllerDTO {
     }
 
     /**
-     * Gets priority.
+     * Gets email.
      *
-     * @return the priority
+     * @return the email
      */
-    public Integer getPriority() {
-        return priority;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * Sets priority.
+     * Sets email.
      *
-     * @param priority the priority
+     * @param email the email
      */
-    public void setPriority(Integer priority) {
-        this.priority = priority;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "DivisionDTO{" +
+        return "Person{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", priority=" + priority +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
