@@ -39,7 +39,7 @@ public class AbstractController<T, E> {
      * @return the t
      */
     protected T convertToDto(final E entity) {
-        return modelMapper.map(entity, dtoClass);
+        return this.convertFromInstanceToClass(entity, dtoClass);
     }
 
     /**
@@ -49,7 +49,19 @@ public class AbstractController<T, E> {
      * @return the e
      */
     protected E convertToEntity(final T dto) {
-        return modelMapper.map(dto, entityClass);
+        return this.convertFromInstanceToClass(dto, entityClass);
+    }
+
+
+    /**
+     * Convert from instance to class object.
+     *
+     * @param fromObjectInstance the from object instance
+     * @param toClass            the to class
+     * @return the object
+     */
+    protected <C extends Object> C convertFromInstanceToClass(final Object fromObjectInstance, final Class<C> toClass) {
+        return modelMapper.map(fromObjectInstance, toClass);
     }
 
     /**
