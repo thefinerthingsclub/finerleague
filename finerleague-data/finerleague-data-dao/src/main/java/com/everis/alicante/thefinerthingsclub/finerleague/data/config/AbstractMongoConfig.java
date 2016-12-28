@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
  * The Abstract Mongo Configuration
  */
 @ConfigurationProperties(FinerLeagueConfigurationConstants.APPLICATION_PROPERTIES_DATABASE)
-@EnableMongoRepositories({"com.everis.alicante.thefinerthingsclub.finerleague.data.dao"})
+@EnableMongoRepositories({"com.everis.alicante.thefinerthingsclub.finerleague.data.repository"})
 public abstract class AbstractMongoConfig extends AbstractMongoConfiguration {
 
     /**

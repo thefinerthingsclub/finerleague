@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 /**
  * The type Division.
  */
-public class Division {
+public class Division implements EntityDocument {
 
     @Id
     private String id;
