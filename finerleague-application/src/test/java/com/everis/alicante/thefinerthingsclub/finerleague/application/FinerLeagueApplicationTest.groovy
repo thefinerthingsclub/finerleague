@@ -4,7 +4,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder
 import spock.lang.Specification
 
 /**
- * Created by emingora on 23/12/2016.
+ * FinerLeagueApplication Spock Test
  */
 class FinerLeagueApplicationTest extends Specification {
 

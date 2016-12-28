@@ -1,5 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller;
 
+import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.EntityDocument;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,7 +14,7 @@ import java.util.stream.Collectors;
  * @param <T> the DTO Type parameter
  * @param <E> the Entity Type parameter
  */
-public class AbstractController<T, E> {
+public class AbstractController<T extends ControllerDTO, E extends EntityDocument> {
 
     private Class<T> dtoClass;
 
@@ -67,11 +69,11 @@ public class AbstractController<T, E> {
     /**
      * Convert to dto collection.
      *
-     * @param entityList the entity list
+     * @param entityCollection the entity list
      * @return the collection
      */
-    protected Collection<T> convertToDto(final Collection<E> entityList) {
-        return entityList.stream()
+    protected Collection<T> convertToDto(final Collection<E> entityCollection) {
+        return entityCollection.stream()
                 .map(entity -> convertToDto(entity)).collect(Collectors.toList());
     }
 
