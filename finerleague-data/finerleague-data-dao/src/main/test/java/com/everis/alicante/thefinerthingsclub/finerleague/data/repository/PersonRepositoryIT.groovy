@@ -1,24 +1,22 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.repository
 
-import com.everis.alicante.thefinerthingsclub.finerleague.data.config.AbstractDataLayerIT
-import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Division
+import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Person
 import org.springframework.beans.factory.annotation.Autowired
 
-class DivisionRepositoryIT extends AbstractDataLayerIT<Division, String, DivisionRepository> {
+class PersonRepositoryIT extends AbstractDataLayerIT<Person, String, PersonRepository> {
 
     @Autowired
-    DivisionRepository divisionRepository;
+    PersonRepository repository;
 
     @Override
-    Division createEntity() {
-        def division = new Division();
+    Person createEntity() {
+        def division = new Person();
         division.setName("name")
-        division.setPriority(1)
         return division;
     }
 
     @Override
-    DivisionRepository getRepository() {
-        return divisionRepository;
+    PersonRepository getRepository() {
+        return repository;
     }
 }
