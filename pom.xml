@@ -64,6 +64,12 @@
             </dependency>
             <dependency>
                 <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>finerleague-common-test</artifactId>
+                <version>${application.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
                 <artifactId>finerleague-core</artifactId>
                 <version>${application.version}</version>
             </dependency>
@@ -137,6 +143,12 @@
                 <version>${spring-boot.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
             <!-- Spring data mongodb -->
             <dependency>
                 <groupId>org.springframework.data</groupId>
@@ -184,35 +196,30 @@
                 <groupId>org.spockframework</groupId>
                 <artifactId>spock-core</artifactId>
                 <version>${spock.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.spockframework</groupId>
                 <artifactId>spock-spring</artifactId>
                 <version>${spock.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.powermock</groupId>
                 <artifactId>powermock-module-junit4</artifactId>
                 <version>${powermock.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.powermock</groupId>
                 <artifactId>powermock-api-mockito</artifactId>
                 <version>${powermock.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>cglib</groupId>
                 <artifactId>cglib-nodep</artifactId>
                 <version>${cglib-nodep.version}</version>
-                <scope>test</scope>
             </dependency>
 
 
@@ -220,14 +227,12 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-test</artifactId>
                 <version>${spring-boot.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <!-- Swagger - Springfox -->
@@ -255,6 +260,7 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- LOGS -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>

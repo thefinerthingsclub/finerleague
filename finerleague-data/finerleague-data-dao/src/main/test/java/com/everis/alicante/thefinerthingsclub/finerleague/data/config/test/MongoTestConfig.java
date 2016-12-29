@@ -13,9 +13,21 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories({"com.everis.alicante.thefinerthingsclub.finerleague.data.repository"})
 public class MongoTestConfig extends AbstractMongoConfiguration {
 
+    /**
+     * DB_NAME constant
+     */
     private static final String DB_NAME = "finerleagueTest";
+    /**
+     * DB_VERSION constant
+     */
     private static final String DB_VERSION = "3.4.1";
+    /**
+     * DB_URI constant
+     */
     private static final String DB_URI = "127.0.0.1";
+    /**
+     * DB_PORT constant
+     */
     private static final Integer DB_PORT = 23456;
 
     @Override

@@ -14,5 +14,6 @@
 
     <modules>
         <module>finerleague-common-domain</module>
+        <module>finerleague-common-test</module>
     </modules>
 </project>
