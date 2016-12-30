@@ -33,6 +33,7 @@
         <swagger2.version>2.6.1</swagger2.version>
         <modelmapper.version>0.7.7</modelmapper.version>
         <logback-classic.version>1.1.7</logback-classic.version>
+        <javax-validation.version>1.1.0.Final</javax-validation.version>
     </properties>
 
     <modules>
@@ -255,7 +256,12 @@
                 <version>${modelmapper.version}</version>
             </dependency>
 
-
+            <!-- OTHERS -->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax-validation.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
