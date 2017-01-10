@@ -4,7 +4,7 @@ import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObj
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The type Game repository.
+ * The type Game dto.
  */
 public class GameDTO implements ControllerObjectDTO {
 

@@ -4,7 +4,7 @@ import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObj
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The type Division repository.
+ * The type Person dto.
  */
 public class PersonDTO implements ControllerObjectDTO {
 

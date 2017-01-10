@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The type Division repository.
+ * The type Team dto.
  */
 public class TeamDTO implements ControllerObjectDTO {
 
