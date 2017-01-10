@@ -21,9 +21,10 @@ import java.util.stream.Collectors;
 /**
  * The type Abstract controller.
  *
- * @param <M> the type parameter
- * @param <O> the DTO Type parameter
- * @param <E> the Entity Type parameter
+ * @param <M>  the type parameter
+ * @param <O>  the DTO Type parameter
+ * @param <E>  the Entity Type parameter
+ * @param <ID> the type parameter
  */
 public class AbstractController<M extends AbstractManager, O extends ControllerObjectDTO, E extends EntityDocument, ID extends Serializable> {
 
@@ -150,4 +151,12 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
                 .map(dto -> convertToEntity(dto)).collect(Collectors.toList());
     }
 
+    /**
+     * Gets manager.
+     *
+     * @return the manager
+     */
+    protected M getManager() {
+        return manager;
+    }
 }

@@ -50,7 +50,6 @@ public class AbstractManager<R extends MongoRepository<E, ID>, E extends EntityD
 
     }
 
-
     /**
      * Exists boolean.
      *
@@ -79,5 +78,14 @@ public class AbstractManager<R extends MongoRepository<E, ID>, E extends EntityD
      */
     public E save(final E entity) {
         return repository.save(entity);
+    }
+
+    /**
+     * Gets repository.
+     *
+     * @return the repository
+     */
+    protected R getRepository() {
+        return repository;
     }
 }

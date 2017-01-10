@@ -2,6 +2,8 @@ package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
 
+import java.util.List;
+
 /**
  * The type Division repository.
  */
@@ -12,6 +14,10 @@ public class TeamDTO implements ControllerObjectDTO {
     private String id;
 
     private String name;
+
+    private List<TeamDTO> teams;
+
+    private List<PersonDTO> persons;
 
     /**
      * Gets id.
@@ -47,6 +53,42 @@ public class TeamDTO implements ControllerObjectDTO {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * Gets teams.
+     *
+     * @return the teams
+     */
+    public List<TeamDTO> getTeams() {
+        return teams;
+    }
+
+    /**
+     * Sets teams.
+     *
+     * @param teams the teams
+     */
+    public void setTeams(List<TeamDTO> teams) {
+        this.teams = teams;
+    }
+
+    /**
+     * Gets persons.
+     *
+     * @return the persons
+     */
+    public List<PersonDTO> getPersons() {
+        return persons;
+    }
+
+    /**
+     * Sets persons.
+     *
+     * @param persons the persons
+     */
+    public void setPersons(List<PersonDTO> persons) {
+        this.persons = persons;
     }
 
     @Override

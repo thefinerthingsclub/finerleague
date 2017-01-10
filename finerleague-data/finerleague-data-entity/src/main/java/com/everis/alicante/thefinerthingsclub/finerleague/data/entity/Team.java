@@ -2,7 +2,9 @@ package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The type Team.
@@ -15,10 +17,10 @@ public class Team implements EntityDocument {
     private String name;
 
     @DBRef
-    private Iterable<Team> teams;
+    private List<Team> teams;
 
     @DBRef
-    private Iterable<Person> persons;
+    private List<Person> persons;
 
     /**
      * Gets id.
@@ -61,7 +63,10 @@ public class Team implements EntityDocument {
      *
      * @return the teams
      */
-    public Iterable<Team> getTeams() {
+    public List<Team> getTeams() {
+        if (teams == null) {
+            teams = new ArrayList<>();
+        }
         return teams;
     }
 
@@ -70,7 +75,7 @@ public class Team implements EntityDocument {
      *
      * @param teams the teams
      */
-    public void setTeams(Iterable<Team> teams) {
+    public void setTeams(List<Team> teams) {
         this.teams = teams;
     }
 
@@ -79,7 +84,10 @@ public class Team implements EntityDocument {
      *
      * @return the persons
      */
-    public Iterable<Person> getPersons() {
+    public List<Person> getPersons() {
+        if (persons == null) {
+            persons = new ArrayList<>();
+        }
         return persons;
     }
 
@@ -88,7 +96,7 @@ public class Team implements EntityDocument {
      *
      * @param persons the persons
      */
-    public void setPersons(Iterable<Person> persons) {
+    public void setPersons(List<Person> persons) {
         this.persons = persons;
     }
 
