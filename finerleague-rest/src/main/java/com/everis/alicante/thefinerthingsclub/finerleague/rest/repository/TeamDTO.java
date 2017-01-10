@@ -1,6 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
@@ -11,8 +12,10 @@ public class TeamDTO implements ControllerObjectDTO {
 
     private static final long serialVersionUID = -619125399420154253L;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
+    @JsonProperty(required = true)
     private String name;
 
     private List<TeamDTO> teams;
