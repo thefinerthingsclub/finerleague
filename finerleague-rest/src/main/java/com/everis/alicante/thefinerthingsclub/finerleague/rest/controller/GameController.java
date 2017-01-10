@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/game")
-public class GameController extends AbstractController<GameManager, GameDTO, Game> {
+public class GameController extends AbstractController<GameManager, GameDTO, Game, String> {
 
     public GameController(GameManager gameMaager) {
         super(gameMaager, GameDTO.class, Game.class);

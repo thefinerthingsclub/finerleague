@@ -7,10 +7,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.List;
@@ -19,10 +21,11 @@ import java.util.stream.Collectors;
 /**
  * The type Abstract controller.
  *
+ * @param <M> the type parameter
  * @param <O> the DTO Type parameter
  * @param <E> the Entity Type parameter
  */
-public class AbstractController<M extends AbstractManager, O extends ControllerObjectDTO, E extends EntityDocument> {
+public class AbstractController<M extends AbstractManager, O extends ControllerObjectDTO, E extends EntityDocument, ID extends Serializable> {
 
     private M manager;
 
@@ -37,8 +40,9 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
     /**
      * Instantiates a new Abstract controller.
      *
-     * @param dtoClass    the repository class
-     * @param entityClass the entity class
+     * @param managerClass the manager class
+     * @param dtoClass     the repository class
+     * @param entityClass  the entity class
      */
     protected AbstractController(final M managerClass, final Class<O> dtoClass, final Class<E> entityClass) {
         this.dtoClass = dtoClass;
@@ -51,12 +55,29 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
      * Find all response entity.
      *
      * @return the response entity
+     * @throws InvocationTargetException the invocation target exception
+     * @throws IllegalAccessException    the illegal access exception
      */
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<O>> findAll() throws InvocationTargetException, IllegalAccessException {
         return new ResponseEntity(this.convertToDto(this.manager.findAll()), HttpStatus.OK);
     }
+
+    /**
+     * Find by id response entity.
+     *
+     * @param id the id
+     * @return the response entity
+     * @throws InvocationTargetException the invocation target exception
+     * @throws IllegalAccessException    the illegal access exception
+     */
+    @RequestMapping(value = "/{id}",  method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<O> findById(final @PathVariable ID id) throws InvocationTargetException, IllegalAccessException {
+        return new ResponseEntity(this.convertToDto((E) this.manager.findOne(id)), HttpStatus.OK);
+    }
+
 
     /**
      * Save response entity.
@@ -98,6 +119,7 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
     /**
      * Convert from instance to class object.
      *
+     * @param <C>                the type parameter
      * @param fromObjectInstance the from object instance
      * @param toClass            the to class
      * @return the object

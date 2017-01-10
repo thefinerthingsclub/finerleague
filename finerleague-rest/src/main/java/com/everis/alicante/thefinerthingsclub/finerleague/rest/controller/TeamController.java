@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/team")
-public class TeamController extends AbstractController<TeamManager, TeamDTO, Team> {
+public class TeamController extends AbstractController<TeamManager, TeamDTO, Team, String> {
 
     /**
      * Instantiates a new Team controller.

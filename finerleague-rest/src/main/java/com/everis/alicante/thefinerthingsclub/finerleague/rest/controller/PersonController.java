@@ -18,7 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/person")
-public class PersonController extends AbstractController<PersonManager, PersonDTO, Person> {
+public class PersonController extends AbstractController<PersonManager, PersonDTO, Person, String> {
 
     /**
      * Instantiates a new Person controller.
