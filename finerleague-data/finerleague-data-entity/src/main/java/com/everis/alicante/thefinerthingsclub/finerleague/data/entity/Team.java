@@ -1,6 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.List;
 public class Team implements EntityDocument {
 
     @Id
+    @ReadOnlyProperty
     private String id;
 
     private String name;

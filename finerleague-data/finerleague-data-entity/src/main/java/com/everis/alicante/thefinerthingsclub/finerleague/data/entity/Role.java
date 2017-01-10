@@ -1,6 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Role implements EntityDocument {
 
     @Id
+    @ReadOnlyProperty
     private String id;
 
     private String name;

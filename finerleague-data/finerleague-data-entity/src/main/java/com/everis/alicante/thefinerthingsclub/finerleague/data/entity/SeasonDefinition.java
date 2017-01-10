@@ -2,6 +2,7 @@ package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.RegExpConstants;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Pattern;
@@ -13,6 +14,7 @@ import java.util.Date;
 public class SeasonDefinition implements EntityDocument {
 
     @Id
+    @ReadOnlyProperty
     private String id;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)

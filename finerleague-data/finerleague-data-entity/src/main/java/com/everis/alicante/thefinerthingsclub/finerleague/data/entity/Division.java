@@ -1,6 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.ReadOnlyProperty;
 
 /**
  * The type Division.
@@ -8,6 +9,7 @@ import org.springframework.data.annotation.Id;
 public class Division implements EntityDocument {
 
     @Id
+    @ReadOnlyProperty
     private String id;
 
     private String name;

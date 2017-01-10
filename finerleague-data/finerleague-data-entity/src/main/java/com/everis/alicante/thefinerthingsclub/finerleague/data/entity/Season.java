@@ -1,6 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
 public class Season implements EntityDocument{
 
     @Id
+    @ReadOnlyProperty
     private String id;
 
     private String name;
