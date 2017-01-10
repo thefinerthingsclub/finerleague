@@ -1,6 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -13,8 +14,10 @@ public class Team implements EntityDocument {
 
     private String name;
 
+    @DBRef
     private Iterable<Team> teams;
 
+    @DBRef
     private Iterable<Person> persons;
 
     /**
