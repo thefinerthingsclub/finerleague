@@ -6,9 +6,12 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * The type Custom web mvc configurer adapter.
+ */
 @EnableWebMvc
 @Configuration
-public class SwaggerRedirect extends WebMvcConfigurerAdapter {
+public class CustomWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {

@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,6 +19,7 @@ import javax.annotation.PostConstruct;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan(basePackages = {"com.everis.alicante.thefinerthingsclub.finerleague"})
+@EnableCaching
 public class FinerLeagueApplication extends SpringBootServletInitializer {
 
     /**

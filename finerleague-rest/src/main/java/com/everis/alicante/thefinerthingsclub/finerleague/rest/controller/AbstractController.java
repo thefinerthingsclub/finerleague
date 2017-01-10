@@ -7,7 +7,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
@@ -70,7 +73,7 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
      * @throws InvocationTargetException the invocation target exception
      * @throws IllegalAccessException    the illegal access exception
      */
-    @RequestMapping(value = "/{id}",  method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<O> findById(final @PathVariable ID id) throws InvocationTargetException, IllegalAccessException {
         return new ResponseEntity(this.convertToDto((E) this.manager.findOne(id)), HttpStatus.OK);

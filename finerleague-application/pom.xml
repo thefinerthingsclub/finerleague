@@ -43,7 +43,11 @@
             <artifactId>finerleague-common-test</artifactId>
         </dependency>
 
-
+        <!-- ENCODING COMPRESSION -->
+        <dependency>
+            <groupId>net.sourceforge.pjl-comp-filter</groupId>
+            <artifactId>pjl-comp-filter</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

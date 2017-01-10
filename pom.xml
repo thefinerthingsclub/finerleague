@@ -35,6 +35,7 @@
         <javax-validation.version>1.1.0.Final</javax-validation.version>
         <jackson-annotations.version>2.8.5</jackson-annotations.version>
         <aspectj.version>1.8.0.RELEASE</aspectj.version>
+        <pjl-comp-filter.version>1.7</pjl-comp-filter.version>
     </properties>
 
     <modules>
@@ -281,6 +282,13 @@
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
                 <version>${aspectj.version}</version>
+            </dependency>
+
+            <!-- Encoding Compression -->
+            <dependency>
+                <groupId>net.sourceforge.pjl-comp-filter</groupId>
+                <artifactId>pjl-comp-filter</artifactId>
+                <version>${pjl-comp-filter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

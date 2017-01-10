@@ -1,8 +1,10 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.config;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,16 +35,21 @@ public class ControllerAspect {
      * @param joinPoint the join point
      * @throws Throwable the throwable
      */
-    @Around("controllerPointCut()")
-    public void logAround(final ProceedingJoinPoint joinPoint) throws Throwable {
+    @Before("controllerPointCut()")
+    public void logBefore(final JoinPoint joinPoint) throws Throwable {
         logger.info(String.format("Method [%s], Arguments [%s] RUNNING", joinPoint.getSignature().getName(), Arrays.toString(joinPoint.getArgs())));
-        try {
-            joinPoint.proceed();
-        } catch (Throwable throwable) {
-            logger.error(String.format("Method [%s], Arguments [%s] EXCEPTION [%s]", joinPoint.getSignature().getName(), Arrays.toString(joinPoint.getArgs()), throwable.getMessage()), throwable);
-            throw throwable;
-        } finally {
-            logger.info(String.format("Method [%s], Arguments [%s] FINISHED", joinPoint.getSignature().getName(), Arrays.toString(joinPoint.getArgs())));
-        }
     }
+
+    /**
+     * Log after.
+     *
+     * @param joinPoint the join point
+     * @throws Throwable the throwable
+     */
+    @After("controllerPointCut()")
+    public void logAfter(final JoinPoint joinPoint) throws Throwable {
+        logger.info(String.format("Method [%s], Arguments [%s] FINISHED", joinPoint.getSignature().getName(), Arrays.toString(joinPoint.getArgs())));
+    }
+
+
 }
