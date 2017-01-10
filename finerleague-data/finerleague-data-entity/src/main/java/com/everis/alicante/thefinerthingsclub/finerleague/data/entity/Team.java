@@ -1,15 +1,21 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * The type Team.
  */
-public class Team implements EntityDocument{
+public class Team implements EntityDocument {
 
+    @Id
     private String id;
 
     private String name;
+
+    private Iterable<Team> teams;
+
+    private Iterable<Person> persons;
 
     /**
      * Gets id.
@@ -47,4 +53,49 @@ public class Team implements EntityDocument{
         this.name = name;
     }
 
+    /**
+     * Gets teams.
+     *
+     * @return the teams
+     */
+    public Iterable<Team> getTeams() {
+        return teams;
+    }
+
+    /**
+     * Sets teams.
+     *
+     * @param teams the teams
+     */
+    public void setTeams(Iterable<Team> teams) {
+        this.teams = teams;
+    }
+
+    /**
+     * Gets persons.
+     *
+     * @return the persons
+     */
+    public Iterable<Person> getPersons() {
+        return persons;
+    }
+
+    /**
+     * Sets persons.
+     *
+     * @param persons the persons
+     */
+    public void setPersons(Iterable<Person> persons) {
+        this.persons = persons;
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", teams=" + teams +
+                ", persons=" + persons +
+                '}';
+    }
 }

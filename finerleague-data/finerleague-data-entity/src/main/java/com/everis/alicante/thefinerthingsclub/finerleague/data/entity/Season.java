@@ -1,5 +1,6 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -9,17 +10,18 @@ import java.util.Date;
  */
 public class Season implements EntityDocument{
 
+    @Id
     private String id;
 
     private String name;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private Date endDate;
-
     private String image;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date startDate;
+
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private Date endDate;
 
     /**
      * Gets id.
@@ -58,24 +60,6 @@ public class Season implements EntityDocument{
     }
 
     /**
-     * Gets end date.
-     *
-     * @return the end date
-     */
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    /**
-     * Sets end date.
-     *
-     * @param endDate the end date
-     */
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    /**
      * Gets image.
      *
      * @return the image
@@ -109,5 +93,34 @@ public class Season implements EntityDocument{
      */
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
+    }
+
+    /**
+     * Gets end date.
+     *
+     * @return the end date
+     */
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    /**
+     * Sets end date.
+     *
+     * @param endDate the end date
+     */
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Season{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
     }
 }

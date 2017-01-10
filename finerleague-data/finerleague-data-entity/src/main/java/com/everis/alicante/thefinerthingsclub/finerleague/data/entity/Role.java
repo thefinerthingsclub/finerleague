@@ -1,5 +1,6 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -7,9 +8,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 public class Role implements EntityDocument {
 
+    @Id
     private String id;
 
     private String name;
+
+    private Iterable<Person> persons;
 
     /**
      * Gets id.
@@ -45,5 +49,32 @@ public class Role implements EntityDocument {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * Gets persons.
+     *
+     * @return the persons
+     */
+    public Iterable<Person> getPersons() {
+        return persons;
+    }
+
+    /**
+     * Sets persons.
+     *
+     * @param persons the persons
+     */
+    public void setPersons(Iterable<Person> persons) {
+        this.persons = persons;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", persons=" + persons +
+                '}';
     }
 }

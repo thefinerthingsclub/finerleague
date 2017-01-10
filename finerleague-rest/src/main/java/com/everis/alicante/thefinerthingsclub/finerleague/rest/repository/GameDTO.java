@@ -15,6 +15,7 @@ public class GameDTO implements ControllerObjectDTO {
 
     private String image;
 
+
     /**
      * Gets id.
      *

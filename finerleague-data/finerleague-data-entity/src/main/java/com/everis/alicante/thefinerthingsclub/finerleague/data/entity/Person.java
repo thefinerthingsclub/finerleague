@@ -14,6 +14,10 @@ public class Person implements EntityDocument {
 
     private String email;
 
+    private Iterable<Team> teams;
+
+    private Iterable<Role> roles;
+
     /**
      * Gets id.
      *
@@ -68,12 +72,50 @@ public class Person implements EntityDocument {
         this.email = email;
     }
 
+    /**
+     * Gets teams.
+     *
+     * @return the teams
+     */
+    public Iterable<Team> getTeams() {
+        return teams;
+    }
+
+    /**
+     * Sets teams.
+     *
+     * @param teams the teams
+     */
+    public void setTeams(Iterable<Team> teams) {
+        this.teams = teams;
+    }
+
+    /**
+     * Gets roles.
+     *
+     * @return the roles
+     */
+    public Iterable<Role> getRoles() {
+        return roles;
+    }
+
+    /**
+     * Sets roles.
+     *
+     * @param roles the roles
+     */
+    public void setRoles(Iterable<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", teams=" + teams +
+                ", roles=" + roles +
                 '}';
     }
 }
