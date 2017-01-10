@@ -1,0 +1,14 @@
+database:
+  databaseName: mongolocal
+  dabaseURI: 127.0.0.1
+  dabasePort: 12345
+  dabaseVersion: 3.4.1
+
+---
+
+spring:
+  profiles: prod
+database:
+  databaseName: finerleague
+  dabaseURI: 127.0.0.1
+  dabasePort: 12345
