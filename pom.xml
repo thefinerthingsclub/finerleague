@@ -20,7 +20,7 @@
         <spring.version>4.3.5.RELEASE</spring.version>
         <spring-data-mongodb.version>1.9.6.RELEASE</spring-data-mongodb.version>
         <!-- LOGGER -->
-        <slf4j.version>1.7.6</slf4j.version>
+        <logback-classic.version>1.1.7</logback-classic.version>
         <!-- TESTING -->
         <spock.version>1.0-groovy-2.4</spock.version>
         <powermock.version>1.6.6</powermock.version>
@@ -32,7 +32,6 @@
         <!-- OTHERS -->
         <swagger2.version>2.6.1</swagger2.version>
         <modelmapper.version>0.7.7</modelmapper.version>
-        <logback-classic.version>1.1.7</logback-classic.version>
     </properties>
 
     <modules>
@@ -179,12 +178,6 @@
 
             <!-- LOGGER -->
             <!-- Logger -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
