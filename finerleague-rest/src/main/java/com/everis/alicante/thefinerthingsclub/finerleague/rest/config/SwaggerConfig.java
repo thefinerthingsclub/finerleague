@@ -1,9 +1,11 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.config;
 
+import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.FinerLeagueConfigurationConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -19,6 +21,7 @@ import javax.annotation.PostConstruct;
  */
 @Configuration
 @EnableSwagger2
+@Profile({FinerLeagueConfigurationConstants.PROFILE_DEFAULT, FinerLeagueConfigurationConstants.PROFILE_LOCAL})
 public class SwaggerConfig {
 
     /**
