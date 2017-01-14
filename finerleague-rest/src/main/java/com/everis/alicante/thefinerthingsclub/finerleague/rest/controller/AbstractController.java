@@ -37,7 +37,6 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
     @Autowired
     private ModelMapper modelMapper;
 
-
     /**
      * Instantiates a new Abstract controller.
      *
@@ -50,7 +49,6 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
         this.entityClass = entityClass;
         this.manager = managerClass;
     }
-
 
     /**
      * Find all response entity.
@@ -79,7 +77,6 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
         return new ResponseEntity(this.convertToDto((E) this.manager.findOne(id)), HttpStatus.OK);
     }
 
-
     /**
      * Save response entity.
      *
@@ -94,7 +91,6 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
         final E newEntity = (E) this.manager.save(this.convertToEntity(dto));
         return new ResponseEntity(this.convertToDto(newEntity), HttpStatus.CREATED);
     }
-
 
     /**
      * Convert to repository t.
@@ -156,7 +152,7 @@ public class AbstractController<M extends AbstractManager, O extends ControllerO
      *
      * @return the manager
      */
-    protected M getManager() {
+    public M getManager() {
         return manager;
     }
 }
