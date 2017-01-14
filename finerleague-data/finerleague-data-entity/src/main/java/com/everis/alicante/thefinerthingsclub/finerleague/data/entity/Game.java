@@ -4,6 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 /**
  * The type Game.
  */
@@ -18,9 +20,9 @@ public class Game implements EntityDocument {
 
     private String image;
 
-    private Iterable<Season> seasons;
+    private List<Season> seasons;
 
-    private Iterable<Repository> repositories;
+    private List<Repository> repositories;
 
     private SeasonDefinition seasonDefinition;
 
@@ -92,7 +94,7 @@ public class Game implements EntityDocument {
      *
      * @param seasons the seasons
      */
-    public void setSeasons(Iterable<Season> seasons) {
+    public void setSeasons(List<Season> seasons) {
         this.seasons = seasons;
     }
 
@@ -101,7 +103,7 @@ public class Game implements EntityDocument {
      *
      * @return the repositories
      */
-    public Iterable<Repository> getRepositories() {
+    public List<Repository> getRepositories() {
         return repositories;
     }
 
@@ -110,7 +112,7 @@ public class Game implements EntityDocument {
      *
      * @param repositories the repositories
      */
-    public void setRepositories(Iterable<Repository> repositories) {
+    public void setRepositories(List<Repository> repositories) {
         this.repositories = repositories;
     }
 
