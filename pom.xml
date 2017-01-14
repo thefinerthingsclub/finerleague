@@ -34,8 +34,12 @@
         <modelmapper.version>0.7.7</modelmapper.version>
         <javax-validation.version>1.1.0.Final</javax-validation.version>
         <jackson-annotations.version>2.8.5</jackson-annotations.version>
-        <aspectj.version>1.8.0.RELEASE</aspectj.version>
+        <aspectj.version>1.8.10</aspectj.version>
         <pjl-comp-filter.version>1.7</pjl-comp-filter.version>
+        <maven-compiler.version>3.6.0</maven-compiler.version>
+        <aspectj-maven-plugin.version>1.9</aspectj-maven-plugin.version>
+        <exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
+        <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
     </properties>
 
     <modules>
@@ -303,30 +307,89 @@
 
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Adding the Spock Tests -->
+                <plugin>
+                    <groupId>org.codehaus.gmavenplus</groupId>
+                    <artifactId>gmavenplus-plugin</artifactId>
+                    <version>${gmavenplus-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <testSources>
+                            <testSource>
+                                <directory>${project.basedir}/src/test/java</directory>
+                                <includes>
+                                    <include>**/*.groovy</include>
+                                </includes>
+                            </testSource>
+                        </testSources>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <!-- IMPORTANT -->
+                        <useIncrementalCompilation>false</useIncrementalCompilation>
+                    </configuration>
+                </plugin>
+                <!-- AspectJ compiler -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>aspectj-maven-plugin</artifactId>
+                    <version>${aspectj-maven-plugin.version}</version>
+                    <configuration>
+                        <!--<showWeaveInfo>true</showWeaveInfo>-->
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <Xlint>ignore</Xlint>
+                        <complianceLevel>${java.version}</complianceLevel>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <!--<verbose>true</verbose>-->
+                        <!--<warn>constructorName,packageDefaultMethod,deprecation,maskedCatchBlocks,unusedLocals,unusedArguments,unusedImport</warn>-->
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <!-- IMPORTANT -->
+                            <phase>process-sources</phase>
+                            <goals>
+                                <goal>compile</goal>
+                                <goal>test-compile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.aspectj</groupId>
+                            <artifactId>aspectjtools</artifactId>
+                            <version>${aspectj.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${exec-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <!-- Adding the Spock Tests -->
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <testSources>
-                        <testSource>
-                            <directory>${project.basedir}/src/test/java</directory>
-                            <includes>
-                                <include>**/*.groovy</include>
-                            </includes>
-                        </testSource>
-                    </testSources>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -354,4 +417,5 @@
             </properties>
         </profile>
     </profiles>
+
 </project>
