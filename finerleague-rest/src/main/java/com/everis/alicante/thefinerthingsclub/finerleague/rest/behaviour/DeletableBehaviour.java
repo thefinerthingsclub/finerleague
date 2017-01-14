@@ -20,8 +20,5 @@ public interface DeletableBehaviour<M extends AbstractManager, ID extends Serial
      *
      * @param id the id
      */
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    default public void delete(ID id) {
-        getManager().delete(id);
-    }
+    public void delete(ID id);
 }
