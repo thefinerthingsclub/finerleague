@@ -71,6 +71,16 @@ public class AbstractManager<R extends MongoRepository<E, ID>, E extends EntityD
     }
 
     /**
+     * Delete.
+     *
+     * @param ids the ids
+     */
+    public void delete(final List<ID> ids) {
+        final Iterable<E> entityCollection = repository.findAll(ids);
+        repository.delete(entityCollection);
+    }
+
+    /**
      * Save t.
      *
      * @param entity the entity

@@ -1,7 +1,8 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entity;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.core.manager.TeamManager;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Team;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entity.behaviour.AllBehaviour;
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.repository.TeamDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/team")
-public class TeamController extends AbstractController<TeamManager, TeamDTO, Team, String> {
+public class TeamController extends AbstractController<TeamManager, TeamDTO, Team, String> implements AllBehaviour<TeamManager, TeamDTO, Team, String> {
 
     /**
      * Instantiates a new Team controller.
