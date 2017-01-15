@@ -1,4 +1,4 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;

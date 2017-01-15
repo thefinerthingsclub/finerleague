@@ -3,7 +3,7 @@ package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entit
 import com.everis.alicante.thefinerthingsclub.finerleague.core.manager.TeamManager;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Team;
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entity.behaviour.AllBehaviour;
-import com.everis.alicante.thefinerthingsclub.finerleague.rest.repository.TeamDTO;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository.TeamDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

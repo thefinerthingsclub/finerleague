@@ -1,14 +1,14 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The type Game dto.
+ * The type Person dto.
  */
-public class GameDTO implements ControllerObjectDTO {
+public class PersonDTO implements ControllerObjectDTO {
 
-    private static final long serialVersionUID = -619125399420154251L;
+    private static final long serialVersionUID = -619125399420154252L;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
@@ -16,8 +16,7 @@ public class GameDTO implements ControllerObjectDTO {
     @JsonProperty(required = true)
     private String name;
 
-    private String image;
-
+    private String email;
 
     /**
      * Gets id.
@@ -56,29 +55,29 @@ public class GameDTO implements ControllerObjectDTO {
     }
 
     /**
-     * Gets image.
+     * Gets email.
      *
-     * @return the image
+     * @return the email
      */
-    public String getImage() {
-        return image;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * Sets image.
+     * Sets email.
      *
-     * @param image the image
+     * @param email the email
      */
-    public void setImage(String image) {
-        this.image = image;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "GameDTO{" +
+        return "PersonDTO{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", image='" + image + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

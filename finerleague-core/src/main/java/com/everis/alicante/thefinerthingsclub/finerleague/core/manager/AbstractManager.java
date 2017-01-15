@@ -17,6 +17,8 @@ import java.util.List;
 public class AbstractManager<R extends MongoRepository<E, ID>, E extends EntityDocument, ID extends Serializable> {
 
     private R repository;
+    private Class<E> entityClass;
+    private Class<ID> idClass;
 
 
     /**

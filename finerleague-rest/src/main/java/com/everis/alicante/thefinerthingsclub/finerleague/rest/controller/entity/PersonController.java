@@ -3,7 +3,7 @@ package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entit
 import com.everis.alicante.thefinerthingsclub.finerleague.core.manager.PersonManager;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Person;
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entity.behaviour.AllBehaviour;
-import com.everis.alicante.thefinerthingsclub.finerleague.rest.repository.PersonDTO;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository.PersonDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

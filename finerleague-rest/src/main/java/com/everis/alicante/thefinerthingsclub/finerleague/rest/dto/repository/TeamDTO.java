@@ -1,14 +1,16 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * The type Person dto.
- */
-public class PersonDTO implements ControllerObjectDTO {
+import java.util.List;
 
-    private static final long serialVersionUID = -619125399420154252L;
+/**
+ * The type Team dto.
+ */
+public class TeamDTO implements ControllerObjectDTO {
+
+    private static final long serialVersionUID = -619125399420154253L;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
@@ -16,7 +18,9 @@ public class PersonDTO implements ControllerObjectDTO {
     @JsonProperty(required = true)
     private String name;
 
-    private String email;
+    private List<TeamDTO> teams;
+
+    private List<PersonDTO> persons;
 
     /**
      * Gets id.
@@ -55,29 +59,46 @@ public class PersonDTO implements ControllerObjectDTO {
     }
 
     /**
-     * Gets email.
+     * Gets teams.
      *
-     * @return the email
+     * @return the teams
      */
-    public String getEmail() {
-        return email;
+    public List<TeamDTO> getTeams() {
+        return teams;
     }
 
     /**
-     * Sets email.
+     * Sets teams.
      *
-     * @param email the email
+     * @param teams the teams
      */
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTeams(List<TeamDTO> teams) {
+        this.teams = teams;
+    }
+
+    /**
+     * Gets persons.
+     *
+     * @return the persons
+     */
+    public List<PersonDTO> getPersons() {
+        return persons;
+    }
+
+    /**
+     * Sets persons.
+     *
+     * @param persons the persons
+     */
+    public void setPersons(List<PersonDTO> persons) {
+        this.persons = persons;
     }
 
     @Override
     public String toString() {
-        return "PersonDTO{" +
+        return "TeamDTO{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
                 '}';
     }
 }

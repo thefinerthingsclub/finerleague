@@ -1,16 +1,14 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.rest.repository;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
-
 /**
- * The type Team dto.
+ * The type Game dto.
  */
-public class TeamDTO implements ControllerObjectDTO {
+public class GameDTO implements ControllerObjectDTO {
 
-    private static final long serialVersionUID = -619125399420154253L;
+    private static final long serialVersionUID = -619125399420154251L;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
@@ -18,9 +16,8 @@ public class TeamDTO implements ControllerObjectDTO {
     @JsonProperty(required = true)
     private String name;
 
-    private List<TeamDTO> teams;
+    private String image;
 
-    private List<PersonDTO> persons;
 
     /**
      * Gets id.
@@ -59,46 +56,29 @@ public class TeamDTO implements ControllerObjectDTO {
     }
 
     /**
-     * Gets teams.
+     * Gets image.
      *
-     * @return the teams
+     * @return the image
      */
-    public List<TeamDTO> getTeams() {
-        return teams;
+    public String getImage() {
+        return image;
     }
 
     /**
-     * Sets teams.
+     * Sets image.
      *
-     * @param teams the teams
+     * @param image the image
      */
-    public void setTeams(List<TeamDTO> teams) {
-        this.teams = teams;
-    }
-
-    /**
-     * Gets persons.
-     *
-     * @return the persons
-     */
-    public List<PersonDTO> getPersons() {
-        return persons;
-    }
-
-    /**
-     * Sets persons.
-     *
-     * @param persons the persons
-     */
-    public void setPersons(List<PersonDTO> persons) {
-        this.persons = persons;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
     public String toString() {
-        return "TeamDTO{" +
+        return "GameDTO{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }
