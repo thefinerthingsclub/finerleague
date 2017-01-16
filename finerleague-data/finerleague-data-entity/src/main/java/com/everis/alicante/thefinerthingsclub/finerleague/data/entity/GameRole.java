@@ -1,22 +1,27 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
-import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.ApplicationRoleEnum;
+import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.GameRoleEnum;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.ReadOnlyProperty;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
 /**
- * The type Role.
+ * The type Game role enum.
  */
-public class Role implements EntityDocument {
+public class GameRole implements EntityDocument {
 
     @Id
     @ReadOnlyProperty
     private String id;
 
-    private ApplicationRoleEnum role;
+    @DBRef
+    private Game game;
 
+    private GameRoleEnum role;
+
+    @DBRef
     private List<Person> persons;
 
     /**
@@ -38,11 +43,29 @@ public class Role implements EntityDocument {
     }
 
     /**
+     * Gets game.
+     *
+     * @return the game
+     */
+    public Game getGame() {
+        return game;
+    }
+
+    /**
+     * Sets game.
+     *
+     * @param game the game
+     */
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    /**
      * Gets role.
      *
      * @return the role
      */
-    public ApplicationRoleEnum getRole() {
+    public GameRoleEnum getRole() {
         return role;
     }
 
@@ -51,7 +74,7 @@ public class Role implements EntityDocument {
      *
      * @param role the role
      */
-    public void setRole(ApplicationRoleEnum role) {
+    public void setRole(GameRoleEnum role) {
         this.role = role;
     }
 
@@ -75,9 +98,10 @@ public class Role implements EntityDocument {
 
     @Override
     public String toString() {
-        return "Role{" +
+        return "GameRole{" +
                 "id='" + id + '\'' +
-                ", role='" + role.name() + '\'' +
+                ", game=" + game +
+                ", role=" + role +
                 ", persons=" + persons +
                 '}';
     }

@@ -1,23 +1,20 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.ApplicationRoleEnum;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.ReadOnlyProperty;
-
-import java.util.List;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The type Role.
+ * The type RoleDTO.
  */
-public class Role implements EntityDocument {
+public class RoleDTO implements ControllerObjectDTO {
 
-    @Id
-    @ReadOnlyProperty
+    private static final long serialVersionUID = -1103716465543839123L;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
     private ApplicationRoleEnum role;
-
-    private List<Person> persons;
 
     /**
      * Gets id.
@@ -55,30 +52,11 @@ public class Role implements EntityDocument {
         this.role = role;
     }
 
-    /**
-     * Gets persons.
-     *
-     * @return the persons
-     */
-    public List<Person> getPersons() {
-        return persons;
-    }
-
-    /**
-     * Sets persons.
-     *
-     * @param persons the persons
-     */
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
-    }
-
     @Override
     public String toString() {
-        return "Role{" +
+        return "RoleDTO{" +
                 "id='" + id + '\'' +
                 ", role='" + role.name() + '\'' +
-                ", persons=" + persons +
                 '}';
     }
 }

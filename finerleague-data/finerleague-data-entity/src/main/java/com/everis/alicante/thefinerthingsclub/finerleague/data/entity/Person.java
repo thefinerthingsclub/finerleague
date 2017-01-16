@@ -4,6 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import java.util.List;
+
 /**
  * The type Person.
  */
@@ -13,15 +15,23 @@ public class Person implements EntityDocument {
     @ReadOnlyProperty
     private String id;
 
+    private String identifier;
+
     private String name;
 
     private String email;
 
     @DBRef
-    private Iterable<Team> teams;
+    private List<Team> teams;
 
     @DBRef
-    private Iterable<Role> roles;
+    private List<Role> roles;
+
+    @DBRef
+    private List<SeasonDivision> seasonDivisionList;
+
+    @DBRef
+    private List<GameRole> gameRoles;
 
     /**
      * Gets id.
@@ -39,6 +49,24 @@ public class Person implements EntityDocument {
      */
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Gets identifier.
+     *
+     * @return the identifier
+     */
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    /**
+     * Sets identifier.
+     *
+     * @param identifier the identifier
+     */
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     /**
@@ -82,7 +110,7 @@ public class Person implements EntityDocument {
      *
      * @return the teams
      */
-    public Iterable<Team> getTeams() {
+    public List<Team> getTeams() {
         return teams;
     }
 
@@ -91,7 +119,7 @@ public class Person implements EntityDocument {
      *
      * @param teams the teams
      */
-    public void setTeams(Iterable<Team> teams) {
+    public void setTeams(List<Team> teams) {
         this.teams = teams;
     }
 
@@ -100,7 +128,7 @@ public class Person implements EntityDocument {
      *
      * @return the roles
      */
-    public Iterable<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
@@ -109,18 +137,57 @@ public class Person implements EntityDocument {
      *
      * @param roles the roles
      */
-    public void setRoles(Iterable<Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    /**
+     * Gets season division list.
+     *
+     * @return the season division list
+     */
+    public List<SeasonDivision> getSeasonDivisionList() {
+        return seasonDivisionList;
+    }
+
+    /**
+     * Sets season division list.
+     *
+     * @param seasonDivisionList the season division list
+     */
+    public void setSeasonDivisionList(List<SeasonDivision> seasonDivisionList) {
+        this.seasonDivisionList = seasonDivisionList;
+    }
+
+    /**
+     * Gets game roles.
+     *
+     * @return the game roles
+     */
+    public List<GameRole> getGameRoles() {
+        return gameRoles;
+    }
+
+    /**
+     * Sets game roles.
+     *
+     * @param gameRoles the game roles
+     */
+    public void setGameRoles(List<GameRole> gameRoles) {
+        this.gameRoles = gameRoles;
     }
 
     @Override
     public String toString() {
         return "Person{" +
                 "id='" + id + '\'' +
+                "identifier='" + identifier + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", teams=" + teams +
                 ", roles=" + roles +
+                ", seasonDivisionList=" + seasonDivisionList +
+                ", gameRoles=" + gameRoles +
                 '}';
     }
 }

@@ -4,18 +4,23 @@ import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObj
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The type Person dto.
+ * The type PersonDTO.
  */
 public class PersonDTO implements ControllerObjectDTO {
 
     private static final long serialVersionUID = -619125399420154252L;
 
+
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
     @JsonProperty(required = true)
+    private String identifier;
+
+    @JsonProperty(required = true)
     private String name;
 
+    @JsonProperty(required = true)
     private String email;
 
     /**
@@ -34,6 +39,24 @@ public class PersonDTO implements ControllerObjectDTO {
      */
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Gets identifier.
+     *
+     * @return the identifier
+     */
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    /**
+     * Sets identifier.
+     *
+     * @param identifier the identifier
+     */
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     /**
@@ -76,6 +99,7 @@ public class PersonDTO implements ControllerObjectDTO {
     public String toString() {
         return "PersonDTO{" +
                 "id='" + id + '\'' +
+                "identifier='" + identifier + '\'' +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 '}';

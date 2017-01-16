@@ -1,32 +1,23 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
-import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.RegExpConstants;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.ReadOnlyProperty;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.format.annotation.DateTimeFormat;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.validation.constraints.Pattern;
 import java.util.Date;
-import java.util.List;
 
 /**
- * The type Season definition.
+ * The type SeasonDTO definition.
  */
-public class SeasonDefinition implements EntityDocument {
+public class SeasonDefinitionDTO implements ControllerObjectDTO {
 
-    @Id
-    @ReadOnlyProperty
+    private static final long serialVersionUID = -167679632223519301L;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date firstDate;
 
-    @Pattern(regexp = RegExpConstants.CRON_EXPRESSION)
     private String seasonCycle;
-
-    @DBRef
-    private List<Season> seasonList;
 
     /**
      * Gets id.
@@ -82,31 +73,12 @@ public class SeasonDefinition implements EntityDocument {
         this.seasonCycle = seasonCycle;
     }
 
-    /**
-     * Gets season list.
-     *
-     * @return the season list
-     */
-    public List<Season> getSeasonList() {
-        return seasonList;
-    }
-
-    /**
-     * Sets season list.
-     *
-     * @param seasonList the season list
-     */
-    public void setSeasonList(List<Season> seasonList) {
-        this.seasonList = seasonList;
-    }
-
     @Override
     public String toString() {
-        return "SeasonDefinition{" +
+        return "SeasonDefinitionDTO{" +
                 "id='" + id + '\'' +
                 ", firstDate=" + firstDate +
                 ", seasonCycle='" + seasonCycle + '\'' +
-                ", seasonList='" + seasonList + '\'' +
                 '}';
     }
 }

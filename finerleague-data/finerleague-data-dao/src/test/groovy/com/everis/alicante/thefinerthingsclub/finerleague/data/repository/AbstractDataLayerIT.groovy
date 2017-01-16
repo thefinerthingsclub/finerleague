@@ -2,11 +2,8 @@ package com.everis.alicante.thefinerthingsclub.finerleague.data.repository
 
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.EntityDocument
 import com.everis.alicante.thefinerthingsclub.finerleague.test.AbstractApplicationIT
-import com.everis.alicante.thefinerthingsclub.finerleague.test.config.FinerLeagueTestConstants
 import com.mongodb.Mongo
-import org.mongeez.Mongeez
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.core.io.ClassPathResource
 import org.springframework.core.io.ResourceLoader
 import org.springframework.data.mongodb.core.MongoTemplate
 import org.springframework.data.mongodb.repository.MongoRepository

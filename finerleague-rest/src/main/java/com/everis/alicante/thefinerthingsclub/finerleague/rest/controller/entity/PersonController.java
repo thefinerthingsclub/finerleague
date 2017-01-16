@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * The type Person controller.
+ * The type PersonDTO controller.
  */
 @RestController
 @RequestMapping("/person")
 public class PersonController extends AbstractController<PersonManager, PersonDTO, Person, String> implements AllBehaviour<PersonManager, PersonDTO, Person, String> {
 
     /**
-     * Instantiates a new Person controller.
+     * Instantiates a new PersonDTO controller.
      *
      * @param personManager the person manager
      */

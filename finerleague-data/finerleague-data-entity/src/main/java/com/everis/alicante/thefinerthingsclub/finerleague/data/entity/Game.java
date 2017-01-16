@@ -2,6 +2,7 @@ package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.ReadOnlyProperty;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -20,11 +21,15 @@ public class Game implements EntityDocument {
 
     private String image;
 
-    private List<Season> seasons;
+    @DBRef
+    private SeasonDefinition seasonDefinition;
 
+    @DBRef
     private List<Repository> repositories;
 
-    private SeasonDefinition seasonDefinition;
+    @DBRef
+    private List<GameRole> gameRoles;
+
 
     /**
      * Gets id.
@@ -81,21 +86,21 @@ public class Game implements EntityDocument {
     }
 
     /**
-     * Gets seasons.
+     * Gets season definition.
      *
-     * @return the seasons
+     * @return the season definition
      */
-    public Iterable<Season> getSeasons() {
-        return seasons;
+    public SeasonDefinition getSeasonDefinition() {
+        return seasonDefinition;
     }
 
     /**
-     * Sets seasons.
+     * Sets season definition.
      *
-     * @param seasons the seasons
+     * @param seasonDefinition the season definition
      */
-    public void setSeasons(List<Season> seasons) {
-        this.seasons = seasons;
+    public void setSeasonDefinition(SeasonDefinition seasonDefinition) {
+        this.seasonDefinition = seasonDefinition;
     }
 
     /**
@@ -117,21 +122,21 @@ public class Game implements EntityDocument {
     }
 
     /**
-     * Gets season definition.
+     * Gets game roles.
      *
-     * @return the season definition
+     * @return the game roles
      */
-    public SeasonDefinition getSeasonDefinition() {
-        return seasonDefinition;
+    public List<GameRole> getGameRoles() {
+        return gameRoles;
     }
 
     /**
-     * Sets season definition.
+     * Sets game roles.
      *
-     * @param seasonDefinition the season definition
+     * @param gameRoles the game roles
      */
-    public void setSeasonDefinition(SeasonDefinition seasonDefinition) {
-        this.seasonDefinition = seasonDefinition;
+    public void setGameRoles(List<GameRole> gameRoles) {
+        this.gameRoles = gameRoles;
     }
 
     @Override
@@ -140,9 +145,9 @@ public class Game implements EntityDocument {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", image='" + image + '\'' +
-                ", seasons=" + seasons +
-                ", repositories=" + repositories +
                 ", seasonDefinition=" + seasonDefinition +
+                ", repositories=" + repositories +
+                ", gameRoles=" + gameRoles +
                 '}';
     }
 }

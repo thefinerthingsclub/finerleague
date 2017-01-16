@@ -1,33 +1,29 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.ReadOnlyProperty;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.format.annotation.DateTimeFormat;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
 /**
- * The type Season.
+ * The type SeasonDTO.
  */
-public class Season implements EntityDocument {
+public class SeasonDTO implements ControllerObjectDTO {
 
-    @Id
-    @ReadOnlyProperty
+    private static final long serialVersionUID = 4775129837510461911L;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
     private String name;
 
     private String image;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date startDate;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private Date endDate;
 
-    @DBRef
-    private SeasonDefinition seasonDefinition;
+    private SeasonDefinitionDTO seasonDefinition;
 
 
     /**
@@ -125,7 +121,7 @@ public class Season implements EntityDocument {
      *
      * @return the season definition
      */
-    public SeasonDefinition getSeasonDefinition() {
+    public SeasonDefinitionDTO getSeasonDefinition() {
         return seasonDefinition;
     }
 
@@ -134,13 +130,13 @@ public class Season implements EntityDocument {
      *
      * @param seasonDefinition the season definition
      */
-    public void setSeasonDefinition(SeasonDefinition seasonDefinition) {
+    public void setSeasonDefinition(SeasonDefinitionDTO seasonDefinition) {
         this.seasonDefinition = seasonDefinition;
     }
 
     @Override
     public String toString() {
-        return "Season{" +
+        return "SeasonDTO{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", image='" + image + '\'' +

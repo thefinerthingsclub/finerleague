@@ -1,21 +1,20 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
+import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.GameRoleEnum;
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The type Team dto.
+ * The type Game role enum.
  */
-public class TeamDTO implements ControllerObjectDTO {
+public class GameRoleDTO implements ControllerObjectDTO {
 
-    private static final long serialVersionUID = -619125399420154253L;
+    private static final long serialVersionUID = 6446409171844813101L;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
-    @JsonProperty(required = true)
-    private String name;
-
+    private GameRoleEnum role;
 
     /**
      * Gets id.
@@ -36,28 +35,28 @@ public class TeamDTO implements ControllerObjectDTO {
     }
 
     /**
-     * Gets name.
+     * Gets role.
      *
-     * @return the name
+     * @return the role
      */
-    public String getName() {
-        return name;
+    public GameRoleEnum getRole() {
+        return role;
     }
 
     /**
-     * Sets name.
+     * Sets role.
      *
-     * @param name the name
+     * @param role the role
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setRole(GameRoleEnum role) {
+        this.role = role;
     }
 
     @Override
     public String toString() {
-        return "TeamDTO{" +
+        return "GameRoleDTO{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                ", role=" + role +
                 '}';
     }
 }

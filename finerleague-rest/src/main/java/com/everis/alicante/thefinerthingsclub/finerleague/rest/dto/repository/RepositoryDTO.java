@@ -1,15 +1,14 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.ReadOnlyProperty;
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The type Repository.
+ * The type RepositoryDTO.
  */
-public class Repository implements EntityDocument {
+public class RepositoryDTO implements ControllerObjectDTO {
 
-    @Id
-    @ReadOnlyProperty
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
     private String name;
@@ -72,7 +71,7 @@ public class Repository implements EntityDocument {
 
     @Override
     public String toString() {
-        return "Repository{" +
+        return "RepositoryDTO{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
