@@ -59,6 +59,12 @@
             <artifactId>de.flapdoodle.embed.process</artifactId>
         </dependency>
 
+        <!-- MONGEEZ fro the initial data -->
+        <dependency>
+            <groupId>org.mongeez</groupId>
+            <artifactId>mongeez</artifactId>
+        </dependency>
+
         <!-- TEST -->
         <dependency>
             <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
