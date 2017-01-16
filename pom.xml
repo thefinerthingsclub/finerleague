@@ -350,14 +350,11 @@
                     <artifactId>aspectj-maven-plugin</artifactId>
                     <version>${aspectj-maven-plugin.version}</version>
                     <configuration>
-                        <!--<showWeaveInfo>true</showWeaveInfo>-->
                         <source>${java.version}</source>
                         <target>${java.version}</target>
                         <Xlint>ignore</Xlint>
                         <complianceLevel>${java.version}</complianceLevel>
                         <encoding>${project.build.sourceEncoding}</encoding>
-                        <!--<verbose>true</verbose>-->
-                        <!--<warn>constructorName,packageDefaultMethod,deprecation,maskedCatchBlocks,unusedLocals,unusedArguments,unusedImport</warn>-->
                     </configuration>
                     <executions>
                         <execution>
