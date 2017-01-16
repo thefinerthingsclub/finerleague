@@ -1,6 +1,5 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.repository;
 
-import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Person;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Team;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

@@ -5,8 +5,6 @@ import com.everis.alicante.thefinerthingsclub.finerleague.data.repository.Divisi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
  * The type Division manager.
  */

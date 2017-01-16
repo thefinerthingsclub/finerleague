@@ -1,8 +1,12 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.test.config;
+package com.everis.alicante.thefinerthingsclub.finerleague.test.config.db;
 
+import com.everis.alicante.thefinerthingsclub.finerleague.test.config.FinerLeagueTestConstants;
 import com.mongodb.Mongo;
 import cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder;
+import org.mongeez.Mongeez;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
@@ -13,10 +17,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories({"com.everis.alicante.thefinerthingsclub.finerleague.data.repository"})
 public class MongoTestConfig extends AbstractMongoConfiguration {
 
-    /**
-     * DB_NAME constant
-     */
-    private static final String DB_NAME = "finerleagueTest";
     /**
      * DB_VERSION constant
      */
@@ -32,15 +32,32 @@ public class MongoTestConfig extends AbstractMongoConfiguration {
 
     @Override
     protected String getDatabaseName() {
-        return DB_NAME;
+        return FinerLeagueTestConstants.DB_NAME;
     }
 
     @Override
+    @Bean
     public Mongo mongo() throws Exception {
         return new EmbeddedMongoBuilder()
                 .version(DB_VERSION)
                 .bindIp(DB_URI)
                 .port(DB_PORT)
                 .build();
+    }
+
+    /**
+     * Load initial data mongeez.
+     *
+     * @param mongo the mongo
+     * @return the mongeez
+     */
+    @Bean(initMethod = "process")
+    public Mongeez loadInitialData(final Mongo mongo) {
+        final Mongeez mongeez = new Mongeez();
+        mongeez.setMongo(mongo);
+        mongeez.setDbName(FinerLeagueTestConstants.DB_NAME);
+        mongeez.setFile(new ClassPathResource("db/mongeez_test.xml"));
+        mongeez.process();
+        return mongeez;
     }
 }

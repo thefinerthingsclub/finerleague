@@ -73,6 +73,12 @@
             <artifactId>embedmongo-spring</artifactId>
         </dependency>
 
+        <!-- MONGEEZ for the initial data -->
+        <dependency>
+            <groupId>org.mongeez</groupId>
+            <artifactId>mongeez</artifactId>
+        </dependency>
+
         <!-- Spring data mongodb -->
         <dependency>
             <groupId>org.springframework.data</groupId>

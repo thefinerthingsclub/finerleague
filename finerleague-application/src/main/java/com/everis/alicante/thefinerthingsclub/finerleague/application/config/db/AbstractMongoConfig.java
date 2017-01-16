@@ -1,4 +1,4 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.data.config;
+package com.everis.alicante.thefinerthingsclub.finerleague.application.config.db;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.FinerLeagueConfigurationConstants;
 import org.slf4j.Logger;

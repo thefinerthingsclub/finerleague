@@ -1,7 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.core.manager;
 
-import com.everis.alicante.thefinerthingsclub.finerleague.data.repository.GameRepository;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Game;
+import com.everis.alicante.thefinerthingsclub.finerleague.data.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

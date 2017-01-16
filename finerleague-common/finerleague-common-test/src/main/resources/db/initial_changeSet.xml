@@ -1,0 +1,8 @@
+<mongoChangeLog>
+    <changeSet changeId="initialChangeSet" author="emingora">
+        <script>
+            db.division.insert({ "_id" : ObjectId("000000000000000000000001"), "name" : "division1", "priority" : 1 });
+            db.division.insert({ "_id" : ObjectId("000000000000000000000002"), "name" : "division2", "priority" : 2 });
+        </script>
+    </changeSet>
+</mongoChangeLog>

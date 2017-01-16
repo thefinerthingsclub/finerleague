@@ -38,7 +38,7 @@ public class FinerLeagueApplicationStaticTest {
     }
 
     /**
-     * Tests init
+     * Tests loadInitialData
      *
      * @throws Exception
      */

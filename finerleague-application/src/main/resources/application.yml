@@ -3,6 +3,7 @@ database:
   dabaseURI: 127.0.0.1
   dabasePort: 12345
   dabaseVersion: 3.4.1
+  initialLoadingFile: db/mongeez_local.xml
 
 ---
 
@@ -14,3 +15,4 @@ database:
   dabasePort: 12345
   userName: prodUser
   password: prodPassword
+  initialLoadingFile: db/mongeez_local.xml

@@ -40,6 +40,7 @@
         <aspectj-maven-plugin.version>1.9</aspectj-maven-plugin.version>
         <exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
         <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
+        <mongeez.version>0.9.6</mongeez.version>
     </properties>
 
     <modules>
@@ -181,6 +182,13 @@
                 <groupId>de.flapdoodle.embed</groupId>
                 <artifactId>de.flapdoodle.embed.process</artifactId>
                 <version>${flapdoodle.version}</version>
+            </dependency>
+
+            <!-- MONGEEZ for the initial data -->
+            <dependency>
+                <groupId>org.mongeez</groupId>
+                <artifactId>mongeez</artifactId>
+                <version>${mongeez.version}</version>
             </dependency>
 
             <!-- LOGGER -->
