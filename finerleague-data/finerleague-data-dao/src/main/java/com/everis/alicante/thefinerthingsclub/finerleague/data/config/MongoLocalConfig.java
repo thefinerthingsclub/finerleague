@@ -18,9 +18,15 @@ public class MongoLocalConfig extends AbstractMongoConfig {
      */
     private String dabaseVersion;
 
-
+    /**
+     * Get mongeez runner mongeez runner.
+     *
+     * @return the mongeez runner
+     */
     @Override
     public Mongo mongo() throws Exception {
+        super.getLogger().info("MongeezRunner Running");
+
         return new EmbeddedMongoBuilder()
                 .version(this.getDabaseVersion())
                 .bindIp(super.getDabaseURI())

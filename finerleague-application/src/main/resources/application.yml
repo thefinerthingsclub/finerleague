@@ -3,8 +3,6 @@ database:
   dabaseURI: 127.0.0.1
   dabasePort: 12345
   dabaseVersion: 3.4.1
-  userName: localUser
-  password: localPassword
 
 ---
 

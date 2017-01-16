@@ -40,7 +40,6 @@
         <aspectj-maven-plugin.version>1.9</aspectj-maven-plugin.version>
         <exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
         <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
-        <mongeez.version>0.9.6</mongeez.version>
     </properties>
 
     <modules>
@@ -184,31 +183,6 @@
                 <version>${flapdoodle.version}</version>
             </dependency>
 
-            <!-- MONGEEZ fro the initial data -->
-            <dependency>
-                <groupId>org.mongeez</groupId>
-                <artifactId>mongeez</artifactId>
-                <version>${mongeez.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-beans</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-parent</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.mongodb</groupId>
-                        <artifactId>mongo-java-driver</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-
             <!-- LOGGER -->
             <!-- Logger -->
             <dependency>
@@ -332,12 +306,6 @@
 
 
     <build>
-        <sourceDirectory>src/main</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>groovy</directory>
-            </resource>
-        </resources>
         <pluginManagement>
             <plugins>
                 <!-- Adding the Spock Tests -->

@@ -1,12 +1,9 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.config;
 
 import com.everis.alicante.thefinerthingsclub.finerleague.common.domain.constants.FinerLeagueConfigurationConstants;
-import org.mongeez.MongeezRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
@@ -56,24 +53,6 @@ public abstract class AbstractMongoConfig extends AbstractMongoConfiguration {
     public void init() {
         logger.info(String.format("Mongo Configuration [%s]: databaseName [%s], databasePort [%s], databaseURI [%s], ", this.getClass().getSimpleName(), this.getDatabaseName(), this.getDabasePort(), this.getDabaseURI()));
     }
-
-    /**
-     * Get mongeez runner mongeez runner.
-     *
-     * @return the mongeez runner
-     */
-    @Bean
-    public MongeezRunner getMongeezRunner() throws Exception {
-        logger.info("MongeezRunner Running");
-        MongeezRunner mongeezRunner = new MongeezRunner();
-        mongeezRunner.setMongo(mongo());
-        mongeezRunner.setUserName(this.getUserName());
-        mongeezRunner.setPassWord(this.getPassword());
-        mongeezRunner.setFile(new FileSystemResource("classpath:mongeez/mongeez.xml"));
-        mongeezRunner.setExecuteEnabled(true);
-        return mongeezRunner;
-    }
-
 
     @Override
     public String getDatabaseName() {
@@ -159,5 +138,14 @@ public abstract class AbstractMongoConfig extends AbstractMongoConfiguration {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * Gets logger.
+     *
+     * @return the logger
+     */
+    protected Logger getLogger() {
+        return logger;
     }
 }
