@@ -1,0 +1,8 @@
+<changeSet changeId="16_01_2016_changeSet" author="emingora">
+    <script>
+        db.user.insert({ "Name" : "Michael Lysaght"});
+    </script>
+    <script>
+        db.user.insert({ "Name" : "Oleksii Iepishkin"});
+    </script>
+</changeSet>

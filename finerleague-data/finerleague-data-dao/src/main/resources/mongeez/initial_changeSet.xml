@@ -1,0 +1,8 @@
+<changeSet changeId="initialChangeSet" author="emingora">
+    <script>
+        db.organization.insert({
+        "Name" : "10Gen", "Location" : "NYC", DateFounded : {"Year":2008, "Month":01, "day":01}});
+        db.organization.insert({
+        "Name" : "SecondMarket", "Location" : "NYC", DateFounded : {"Year":2004, "Month":5, "day":4}});
+    </script>
+</changeSet>
