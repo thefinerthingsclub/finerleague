@@ -1,4 +1,4 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.data.config.test;
+package com.everis.alicante.thefinerthingsclub.finerleague.test.config;
 
 import com.mongodb.Mongo;
 import cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder;

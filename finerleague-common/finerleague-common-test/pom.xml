@@ -67,7 +67,17 @@
             <artifactId>powermock-api-mockito</artifactId>
         </dependency>
 
-        <!-- For the initial dataset -->
+        <!-- Embeded Mongo -->
+        <dependency>
+            <groupId>cz.jirutka.spring</groupId>
+            <artifactId>embedmongo-spring</artifactId>
+        </dependency>
+
+        <!-- Spring data mongodb -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+        </dependency>
     </dependencies>
 
 

@@ -37,7 +37,7 @@ public class FinerLeagueApplication extends SpringBootServletInitializer {
      *
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(String... args) {
         // TODO: remove it from here
         System.setProperty("http.proxyHost", "10.0.8.102");
         System.setProperty("http.proxyPort", "8080");
