@@ -49,6 +49,7 @@
         <module>finerleague-application</module>
         <module>finerleague-data</module>
         <module>finerleague-core</module>
+        <module>external-services</module>
     </modules>
 
 
