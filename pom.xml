@@ -18,6 +18,7 @@
         <!-- SPRING -->
         <spring-boot.version>1.4.2.RELEASE</spring-boot.version>
         <spring.version>4.3.5.RELEASE</spring.version>
+        <spring-security.version>4.2.1.RELEASE</spring-security.version>
         <spring-data-mongodb.version>1.9.6.RELEASE</spring-data-mongodb.version>
         <!-- LOGGER -->
         <logback-classic.version>1.1.7</logback-classic.version>
@@ -98,6 +99,26 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+
+            <!-- Spring Security -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+
+            <!-- Spring Security JSP Taglib -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${spring-security.version}</version>
             </dependency>
 
             <!-- Spring MVC -->
