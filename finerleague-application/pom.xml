@@ -20,6 +20,11 @@
             <artifactId>finerleague-rest</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+            <artifactId>ldap-authentication-impl</artifactId>
+        </dependency>
+
         <!-- SPRING -->
         <dependency>
             <groupId>org.springframework</groupId>

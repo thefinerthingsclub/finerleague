@@ -87,6 +87,16 @@
                 <artifactId>finerleague-rest</artifactId>
                 <version>${application.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>ldap-authentication</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>ldap-authentication-impl</artifactId>
+                <version>${application.version}</version>
+            </dependency>
 
             <!-- SPRING -->
             <dependency>

@@ -8,6 +8,7 @@
   </parent>
   <artifactId>ldap</artifactId>
   <packaging>pom</packaging>
+
   <modules>
     <module>ldap-authentication</module>
     <module>ldap-authentication-impl</module>
