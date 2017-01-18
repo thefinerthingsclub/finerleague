@@ -1,5 +1,7 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.application;
 
+import javax.annotation.PostConstruct;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -9,8 +11,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import javax.annotation.PostConstruct;
 
 
 /**
@@ -39,8 +39,8 @@ public class FinerLeagueApplication extends SpringBootServletInitializer {
      */
     public static void main(String... args) {
         // TODO: remove it from here
-        System.setProperty("http.proxyHost", "10.0.8.102");
-        System.setProperty("http.proxyPort", "8080");
+       // System.setProperty("http.proxyHost", "10.0.8.102");
+        //System.setProperty("http.proxyPort", "8080");
         SpringApplication.run(FinerLeagueApplication.class, args);
     }
 

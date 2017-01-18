@@ -30,6 +30,12 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
+		 <!-- Spring HATEOAS -->
+		<dependency>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
+		</dependency>
+		
         <!-- Swagger - Springfox -->
         <dependency>
             <groupId>io.springfox</groupId>

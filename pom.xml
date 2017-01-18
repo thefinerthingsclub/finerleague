@@ -1,425 +1,434 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
-    <artifactId>finerleague</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+	<artifactId>finerleague</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <application.version>0.0.1-SNAPSHOT</application.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<application.version>0.0.1-SNAPSHOT</application.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <tomcat.version>8.5.9</tomcat.version>
-        <!-- SPRING -->
-        <spring-boot.version>1.4.2.RELEASE</spring-boot.version>
-        <spring.version>4.3.5.RELEASE</spring.version>
-        <spring-data-mongodb.version>1.9.6.RELEASE</spring-data-mongodb.version>
-        <!-- LOGGER -->
-        <logback-classic.version>1.1.7</logback-classic.version>
-        <!-- TESTING -->
-        <spock.version>1.0-groovy-2.4</spock.version>
-        <powermock.version>1.6.6</powermock.version>
-        <cglib-nodep.version>3.2.4</cglib-nodep.version>
-        <!-- DATABASE -->
-        <embedmongo-spring.version>1.3.1</embedmongo-spring.version>
-        <flapdoodle.version>1.50.2</flapdoodle.version>
+		<tomcat.version>8.5.9</tomcat.version>
+		<!-- SPRING -->
+		<spring-boot.version>1.4.2.RELEASE</spring-boot.version>
+		<spring.version>4.3.5.RELEASE</spring.version>
+		<spring-data-mongodb.version>1.9.6.RELEASE</spring-data-mongodb.version>
+		<spring-hateoas.version>0.23.0.RELEASE</spring-hateoas.version>
+		<!-- LOGGER -->
+		<logback-classic.version>1.1.7</logback-classic.version>
+		<!-- TESTING -->
+		<spock.version>1.0-groovy-2.4</spock.version>
+		<powermock.version>1.6.6</powermock.version>
+		<cglib-nodep.version>3.2.4</cglib-nodep.version>
+		<!-- DATABASE -->
+		<embedmongo-spring.version>1.3.1</embedmongo-spring.version>
+		<flapdoodle.version>1.50.2</flapdoodle.version>
 
-        <!-- OTHERS -->
-        <swagger2.version>2.6.1</swagger2.version>
-        <modelmapper.version>0.7.7</modelmapper.version>
-        <javax-validation.version>1.1.0.Final</javax-validation.version>
-        <jackson-annotations.version>2.8.5</jackson-annotations.version>
-        <aspectj.version>1.8.10</aspectj.version>
-        <pjl-comp-filter.version>1.7</pjl-comp-filter.version>
-        <maven-compiler.version>3.6.0</maven-compiler.version>
-        <aspectj-maven-plugin.version>1.9</aspectj-maven-plugin.version>
-        <exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
-        <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
-        <mongeez.version>0.9.6</mongeez.version>
-    </properties>
+		<!-- OTHERS -->
+		<swagger2.version>2.6.1</swagger2.version>
+		<modelmapper.version>0.7.7</modelmapper.version>
+		<javax-validation.version>1.1.0.Final</javax-validation.version>
+		<jackson-annotations.version>2.8.5</jackson-annotations.version>
+		<aspectj.version>1.8.10</aspectj.version>
+		<pjl-comp-filter.version>1.7</pjl-comp-filter.version>
+		<maven-compiler.version>3.6.0</maven-compiler.version>
+		<aspectj-maven-plugin.version>1.9</aspectj-maven-plugin.version>
+		<exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
+		<gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
+		<mongeez.version>0.9.6</mongeez.version>
+	</properties>
 
-    <modules>
-        <module>finerleague-rest</module>
-        <module>finerleague-common</module>
-        <module>finerleague-application</module>
-        <module>finerleague-data</module>
-        <module>finerleague-core</module>
-    </modules>
-
-
-    <dependencyManagement>
-        <dependencies>
-            <!-- INTERNAL DEPENDENCIES -->
-            <dependency>
-                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
-                <artifactId>finerleague-data-dao</artifactId>
-                <version>${application.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
-                <artifactId>finerleague-data-entity</artifactId>
-                <version>${application.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
-                <artifactId>finerleague-common-domain</artifactId>
-                <version>${application.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
-                <artifactId>finerleague-common-test</artifactId>
-                <version>${application.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
-                <artifactId>finerleague-core</artifactId>
-                <version>${application.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
-                <artifactId>finerleague-rest</artifactId>
-                <version>${application.version}</version>
-            </dependency>
-
-            <!-- SPRING -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <!-- Spring MVC -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-web</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-
-            <!-- SPRING BOOT -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring-boot.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-tomcat</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-jdbc</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-mongodb</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-autoconfigure</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
-
-            <!-- Spring data mongodb -->
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-mongodb</artifactId>
-                <version>${spring-data-mongodb.version}</version>
-            </dependency>
-
-            <!-- DATABASE -->
-            <!-- Embeded Mongo -->
-            <dependency>
-                <groupId>cz.jirutka.spring</groupId>
-                <artifactId>embedmongo-spring</artifactId>
-                <version>${embedmongo-spring.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>de.flapdoodle.embed</groupId>
-                <artifactId>de.flapdoodle.embed.mongo</artifactId>
-                <version>${flapdoodle.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>de.flapdoodle.embed</groupId>
-                <artifactId>de.flapdoodle.embed.process</artifactId>
-                <version>${flapdoodle.version}</version>
-            </dependency>
-
-            <!-- MONGEEZ for the initial data -->
-            <dependency>
-                <groupId>org.mongeez</groupId>
-                <artifactId>mongeez</artifactId>
-                <version>${mongeez.version}</version>
-            </dependency>
-
-            <!-- LOGGER -->
-            <!-- Logger -->
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>${logback-classic.version}</version>
-            </dependency>
-
-            <!-- TESTING -->
-            <dependency>
-                <groupId>org.spockframework</groupId>
-                <artifactId>spock-core</artifactId>
-                <version>${spock.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.spockframework</groupId>
-                <artifactId>spock-spring</artifactId>
-                <version>${spock.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.powermock</groupId>
-                <artifactId>powermock-module-junit4</artifactId>
-                <version>${powermock.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.powermock</groupId>
-                <artifactId>powermock-api-mockito</artifactId>
-                <version>${powermock.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib-nodep</artifactId>
-                <version>${cglib-nodep.version}</version>
-            </dependency>
+	<modules>
+		<module>finerleague-rest</module>
+		<module>finerleague-common</module>
+		<module>finerleague-application</module>
+		<module>finerleague-data</module>
+		<module>finerleague-core</module>
+	</modules>
 
 
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
+	<dependencyManagement>
+		<dependencies>
+			<!-- INTERNAL DEPENDENCIES -->
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-data-dao</artifactId>
+				<version>${application.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-data-entity</artifactId>
+				<version>${application.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-common-domain</artifactId>
+				<version>${application.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-common-test</artifactId>
+				<version>${application.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-core</artifactId>
+				<version>${application.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+				<artifactId>finerleague-rest</artifactId>
+				<version>${application.version}</version>
+			</dependency>
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-test</artifactId>
-                <version>${spring-boot.version}</version>
-            </dependency>
+			<!-- SPRING -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
-            <!-- Swagger - Springfox -->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger2.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>com.fasterxml.jackson.core</groupId>
-                        <artifactId>jackson-annotations</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger2.version}</version>
-            </dependency>
+			<!-- Spring MVC -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
-            <!-- MODEL MAPPER -->
-            <dependency>
-                <groupId>org.modelmapper</groupId>
-                <artifactId>modelmapper</artifactId>
-                <version>${modelmapper.version}</version>
-            </dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
-            <!-- OTHERS -->
-            <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>${javax-validation.version}</version>
-            </dependency>
+			<!-- SPRING BOOT -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
 
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>${jackson-annotations.version}</version>
-            </dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
 
-            <!-- ASPECT -->
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjrt</artifactId>
-                <version>${aspectj.version}</version>
-            </dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>test</scope>
+			</dependency>
 
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjweaver</artifactId>
-                <version>${aspectj.version}</version>
-            </dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
 
-            <!-- Encoding Compression -->
-            <dependency>
-                <groupId>net.sourceforge.pjl-comp-filter</groupId>
-                <artifactId>pjl-comp-filter</artifactId>
-                <version>${pjl-comp-filter.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-jdbc</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
 
-    <dependencies>
-        <!-- LOGS -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-    </dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-mongodb</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-autoconfigure</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<!-- Spring hateoas -->
+
+			<dependency>
+				<groupId>org.springframework.hateoas</groupId>
+				<artifactId>spring-hateoas</artifactId>
+				<version>${spring-hateoas.version}</version>
+			</dependency>
+
+			<!-- Spring data mongodb -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-mongodb</artifactId>
+				<version>${spring-data-mongodb.version}</version>
+			</dependency>
+
+			<!-- DATABASE -->
+			<!-- Embeded Mongo -->
+			<dependency>
+				<groupId>cz.jirutka.spring</groupId>
+				<artifactId>embedmongo-spring</artifactId>
+				<version>${embedmongo-spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.flapdoodle.embed</groupId>
+				<artifactId>de.flapdoodle.embed.mongo</artifactId>
+				<version>${flapdoodle.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.flapdoodle.embed</groupId>
+				<artifactId>de.flapdoodle.embed.process</artifactId>
+				<version>${flapdoodle.version}</version>
+			</dependency>
+
+			<!-- MONGEEZ for the initial data -->
+			<dependency>
+				<groupId>org.mongeez</groupId>
+				<artifactId>mongeez</artifactId>
+				<version>${mongeez.version}</version>
+			</dependency>
+
+			<!-- LOGGER -->
+			<!-- Logger -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback-classic.version}</version>
+			</dependency>
+
+			<!-- TESTING -->
+			<dependency>
+				<groupId>org.spockframework</groupId>
+				<artifactId>spock-core</artifactId>
+				<version>${spock.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.spockframework</groupId>
+				<artifactId>spock-spring</artifactId>
+				<version>${spock.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.powermock</groupId>
+				<artifactId>powermock-module-junit4</artifactId>
+				<version>${powermock.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.powermock</groupId>
+				<artifactId>powermock-api-mockito</artifactId>
+				<version>${powermock.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib-nodep</artifactId>
+				<version>${cglib-nodep.version}</version>
+			</dependency>
 
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <!-- Adding the Spock Tests -->
-                <plugin>
-                    <groupId>org.codehaus.gmavenplus</groupId>
-                    <artifactId>gmavenplus-plugin</artifactId>
-                    <version>${gmavenplus-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>compile</goal>
-                                <goal>testCompile</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <testSources>
-                            <testSource>
-                                <directory>${project.basedir}/src/test/groovy</directory>
-                                <includes>
-                                    <include>**/*.groovy</include>
-                                </includes>
-                            </testSource>
-                        </testSources>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler.version}</version>
-                    <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
-                        <!-- IMPORTANT -->
-                        <useIncrementalCompilation>false</useIncrementalCompilation>
-                    </configuration>
-                </plugin>
-                <!-- AspectJ compiler -->
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>aspectj-maven-plugin</artifactId>
-                    <version>${aspectj-maven-plugin.version}</version>
-                    <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
-                        <Xlint>ignore</Xlint>
-                        <complianceLevel>${java.version}</complianceLevel>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <!-- IMPORTANT -->
-                            <phase>process-sources</phase>
-                            <goals>
-                                <goal>compile</goal>
-                                <goal>test-compile</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.aspectj</groupId>
-                            <artifactId>aspectjtools</artifactId>
-                            <version>${aspectj.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>${exec-maven-plugin.version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
-        <plugins>
-            <!-- Adding the Spock Tests -->
-            <plugin>
-                <groupId>org.codehaus.gmavenplus</groupId>
-                <artifactId>gmavenplus-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-test</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
 
-    <profiles>
-        <profile>
-            <id>local</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <spring.profiles.active>local</spring.profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>ci</id>
-            <properties>
-                <spring.profiles.active>prod</spring.profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <spring.profiles.active>prod</spring.profiles.active>
-            </properties>
-        </profile>
-    </profiles>
+			<!-- Swagger - Springfox -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${swagger2.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-annotations</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${swagger2.version}</version>
+			</dependency>
+
+			<!-- MODEL MAPPER -->
+			<dependency>
+				<groupId>org.modelmapper</groupId>
+				<artifactId>modelmapper</artifactId>
+				<version>${modelmapper.version}</version>
+			</dependency>
+
+			<!-- OTHERS -->
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>${javax-validation.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson-annotations.version}</version>
+			</dependency>
+
+			<!-- ASPECT -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<!-- Encoding Compression -->
+			<dependency>
+				<groupId>net.sourceforge.pjl-comp-filter</groupId>
+				<artifactId>pjl-comp-filter</artifactId>
+				<version>${pjl-comp-filter.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- LOGS -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Adding the Spock Tests -->
+				<plugin>
+					<groupId>org.codehaus.gmavenplus</groupId>
+					<artifactId>gmavenplus-plugin</artifactId>
+					<version>${gmavenplus-plugin.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>compile</goal>
+								<goal>testCompile</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<testSources>
+							<testSource>
+								<directory>${project.basedir}/src/test/groovy</directory>
+								<includes>
+									<include>**/*.groovy</include>
+								</includes>
+							</testSource>
+						</testSources>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler.version}</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<!-- IMPORTANT -->
+						<useIncrementalCompilation>false</useIncrementalCompilation>
+					</configuration>
+				</plugin>
+				<!-- AspectJ compiler -->
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>aspectj-maven-plugin</artifactId>
+					<version>${aspectj-maven-plugin.version}</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<Xlint>ignore</Xlint>
+						<complianceLevel>${java.version}</complianceLevel>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+					<executions>
+						<execution>
+							<!-- IMPORTANT -->
+							<phase>process-sources</phase>
+							<goals>
+								<goal>compile</goal>
+								<goal>test-compile</goal>
+							</goals>
+						</execution>
+					</executions>
+					<dependencies>
+						<dependency>
+							<groupId>org.aspectj</groupId>
+							<artifactId>aspectjtools</artifactId>
+							<version>${aspectj.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>${exec-maven-plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<!-- Adding the Spock Tests -->
+			<plugin>
+				<groupId>org.codehaus.gmavenplus</groupId>
+				<artifactId>gmavenplus-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>local</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>ci</id>
+			<properties>
+				<spring.profiles.active>prod</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<spring.profiles.active>prod</spring.profiles.active>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>
