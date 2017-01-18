@@ -24,17 +24,17 @@
     <proxies>
         <proxy>
             <id>alicante</id>
-            <active>false</active>
+            <active>true</active>
             <protocol>http</protocol>
-            <host>10.0.8.102</host>
+            <host>10.118.8.100</host>
             <port>8080</port>
             <nonProxyHosts>localhost|127.0.0.1|quark.everis.int|quark.everis.com|7.129.8.23</nonProxyHosts>
         </proxy>
         <proxy>
             <id>alicante_https</id>
-            <active>false</active>
+            <active>true</active>
             <protocol>https</protocol>
-            <host>10.0.8.102</host>
+            <host>10.118.8.100</host>
             <port>8080</port>
             <nonProxyHosts>localhost|127.0.0.1|quark.everis.int|quark.everis.com|7.129.8.23</nonProxyHosts>
         </proxy>
