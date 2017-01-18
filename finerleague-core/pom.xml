@@ -18,5 +18,10 @@
             <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
             <artifactId>finerleague-data-dao</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+            <artifactId>ldap-authentication</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

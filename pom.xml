@@ -49,6 +49,7 @@
         <module>finerleague-application</module>
         <module>finerleague-data</module>
         <module>finerleague-core</module>
+        <module>external-services</module>
     </modules>
 
 
@@ -84,6 +85,16 @@
             <dependency>
                 <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
                 <artifactId>finerleague-rest</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>ldap-authentication</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>ldap-authentication-impl</artifactId>
                 <version>${application.version}</version>
             </dependency>
 

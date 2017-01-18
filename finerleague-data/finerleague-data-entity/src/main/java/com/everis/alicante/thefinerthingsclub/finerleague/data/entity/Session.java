@@ -1,5 +1,6 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.data.entity;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -7,37 +8,18 @@ import java.util.Date;
 /**
  * The type User session.
  */
-public class UserSession implements EntityDocument {
+public class Session implements EntityDocument {
 
-    private String session;
-
+    @Id
     private String token;
 
     private String login;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Date experioationDate;
 
-    private boolean valid;
+    private Boolean valid;
 
-    /**
-     * Gets session.
-     *
-     * @return the session
-     */
-    public String getSession() {
-        return session;
-    }
-
-    /**
-     * Sets session.
-     *
-     * @param session the session
-     */
-    public void setSession(String session) {
-        this.session = session;
-    }
 
     /**
      * Gets token.
@@ -98,7 +80,7 @@ public class UserSession implements EntityDocument {
      *
      * @return the boolean
      */
-    public boolean isValid() {
+    public Boolean isValid() {
         return valid;
     }
 
@@ -107,14 +89,13 @@ public class UserSession implements EntityDocument {
      *
      * @param valid the valid
      */
-    public void setValid(boolean valid) {
+    public void setValid(Boolean valid) {
         this.valid = valid;
     }
 
     @Override
     public String toString() {
-        return "UserSession{" +
-                "session='" + session + '\'' +
+        return "Session{" +
                 ", token='" + token + '\'' +
                 ", login='" + login + '\'' +
                 ", experioationDate=" + experioationDate +
