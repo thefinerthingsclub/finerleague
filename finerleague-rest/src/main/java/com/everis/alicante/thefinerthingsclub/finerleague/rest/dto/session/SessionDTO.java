@@ -1,12 +1,14 @@
 package com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.session;
 
+import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.ControllerObjectDTO;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * The type Session dto.
  */
-public class SessionDTO implements Serializable {
+public class SessionDTO implements ControllerObjectDTO {
 
     private static final long serialVersionUID = 8716458047553060753L;
 
