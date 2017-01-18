@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping(value = "/session")
-public class SessionController extends AbstractController<SessionManager, SessionDTO, Session, String>{
+public class SessionController extends AbstractController<SessionManager, SessionDTO, Session, String> {
 
     @Autowired
-    public SessionController(final SessionManager sessionManager){
+    public SessionController(final SessionManager sessionManager) {
         super(sessionManager, SessionDTO.class, Session.class);
     }
 
@@ -57,8 +57,7 @@ public class SessionController extends AbstractController<SessionManager, Sessio
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<SessionDTO> getSession(@RequestHeader(value = "token") String token) {
-        final Session session =  super.getManager().getSession(token);
+        final Session session = super.getManager().getSession(token);
         return new ResponseEntity<SessionDTO>(super.convertToDto(session), HttpStatus.CREATED);
-
     }
 }

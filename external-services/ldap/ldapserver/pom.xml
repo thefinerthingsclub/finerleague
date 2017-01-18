@@ -12,9 +12,21 @@
     <artifactId>ldap-server</artifactId>
 
     <dependencies>
+        <!-- INTERNAL -->
         <dependency>
             <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
             <artifactId>finerleague-common-domain</artifactId>
+        </dependency>
+        <!-- SPRING -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <!-- APACHE DS -->
+        <dependency>
+            <groupId>org.apache.directory.server</groupId>
+            <artifactId>apacheds-all</artifactId>
         </dependency>
     </dependencies>
 

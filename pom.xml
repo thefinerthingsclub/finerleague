@@ -43,6 +43,7 @@
         <mongeez.version>0.9.6</mongeez.version>
         <spring-security.version>4.2.1.RELEASE</spring-security.version>
         <javax-servlet.version>3.1.0</javax-servlet.version>
+        <apacheds.version>1.5.7</apacheds.version>
     </properties>
 
     <modules>
@@ -343,11 +344,19 @@
                 <version>${pjl-comp-filter.version}</version>
             </dependency>
 
-
-
             <!-- LDAP -->
-
             <!-- ldap server -->
+            <dependency>
+                <groupId>org.apache.directory.server</groupId>
+                <artifactId>apacheds-all</artifactId>
+                <version>${apacheds.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.directory.shared</groupId>
+                        <artifactId>shared-ldap-schema</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

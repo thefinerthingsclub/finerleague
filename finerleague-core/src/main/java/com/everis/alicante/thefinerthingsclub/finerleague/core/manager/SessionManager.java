@@ -37,10 +37,11 @@ public class SessionManager extends AbstractManager<SessionRepository, Session, 
 
 
     /**
-     * Login.
+     * Login session.
      *
      * @param login    the login
      * @param password the password
+     * @return the session
      */
     public Session login(final String login, final String password) {
         if (this.isValidAuthentication(login, password)) {
@@ -79,6 +80,17 @@ public class SessionManager extends AbstractManager<SessionRepository, Session, 
         return super.getRepository().getSession(token, true);
     }
 
+    /**
+     * Is valid token boolean.
+     *
+     * @param token the token
+     * @return the boolean
+     */
+    public Boolean isValidToken(final String token) {
+        return getSession(token) != null;
+    }
+
+
     private boolean isValidAuthentication(final String login, final String password) {
         ldapAuthentication.autenticate(login, password);
         //TODO
@@ -92,19 +104,13 @@ public class SessionManager extends AbstractManager<SessionRepository, Session, 
         return calendar.getTime();
     }
 
-    /**
-     * Generate token.
-     *
-     * @param login the login
-     * @return the string
-     */
     private String generateToken(final String login) {
         final SecureRandom random = new SecureRandom();
         final StringBuffer sb = new StringBuffer();
 
         sb.append(login);
         sb.append(new BigInteger(130, random).toString(32));
-        byte[] toEncode = sb.toString().getBytes(StandardCharsets.UTF_8);
+        final byte[] toEncode = sb.toString().getBytes(StandardCharsets.UTF_8);
 
         return Base64.getEncoder().encodeToString(toEncode);
     }
