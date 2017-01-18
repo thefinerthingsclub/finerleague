@@ -312,6 +312,11 @@
                 <artifactId>pjl-comp-filter</artifactId>
                 <version>${pjl-comp-filter.version}</version>
             </dependency>
+
+            <!-- LDAP -->
+
+            <!-- ldap server -->
+
         </dependencies>
     </dependencyManagement>
 
