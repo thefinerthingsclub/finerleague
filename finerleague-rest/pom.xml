@@ -12,6 +12,10 @@
     <artifactId>finerleague-rest</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
         <!-- INTERNAL -->
         <dependency>
             <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>

@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          
+          <profiles>
+        <profile>
+            <id>external</id>
+            <repositories>
+                <repository>
+                    <id>mvn-repository</id>
+                    <name>MVN repository</name>
+                    <url>http://central.maven.org/maven2/</url>
+                    <layout>default</layout>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
 
-	<servers>
-		
-	</servers>
-
-	<profiles>
-		<profile>
-			<id>external</id>
-			<repositories>
-				<repository>
-					<id>mvn-repository</id>
-					<name>MVN repository</name>
-					<url>http://central.maven.org/maven2/</url>
-					<layout>default</layout>
-				</repository>
-			</repositories>
-		</profile>
-	</profiles>
-
-	<activeProfiles>
-		<activeProfile>external</activeProfile>
-	</activeProfiles>
-
+    <activeProfiles>
+        <activeProfile>external</activeProfile>
+    </activeProfiles>
+    
+    <proxies>
+        <proxy>
+            <id>alicante</id>
+            <active>false</active>
+            <protocol>http</protocol>
+            <host>10.0.8.102</host>
+            <port>8080</port>
+            <nonProxyHosts>localhost|127.0.0.1|quark.everis.int|quark.everis.com|7.129.8.23</nonProxyHosts>
+        </proxy>
+        <proxy>
+            <id>alicante_https</id>
+            <active>false</active>
+            <protocol>https</protocol>
+            <host>10.0.8.102</host>
+            <port>8080</port>
+            <nonProxyHosts>localhost|127.0.0.1|quark.everis.int|quark.everis.com|7.129.8.23</nonProxyHosts>
+        </proxy>
+    </proxies>
 </settings>
