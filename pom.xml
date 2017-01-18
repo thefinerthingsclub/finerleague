@@ -99,6 +99,11 @@
                 <artifactId>ldap-authentication-impl</artifactId>
                 <version>${application.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>ldap-server</artifactId>
+                <version>${application.version}</version>
+            </dependency>
 
             <!-- SPRING -->
             <dependency>
@@ -461,6 +466,12 @@
             <id>prod</id>
             <properties>
                 <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>ldap</id>
+            <properties>
+                <spring.profiles.active>ldap</spring.profiles.active>
             </properties>
         </profile>
     </profiles>

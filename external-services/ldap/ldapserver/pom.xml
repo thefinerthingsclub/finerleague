@@ -11,5 +11,12 @@
 
     <artifactId>ldap-server</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+            <artifactId>finerleague-common-domain</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>

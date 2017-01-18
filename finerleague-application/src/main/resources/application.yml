@@ -8,6 +8,13 @@ database:
 ---
 
 spring:
+  profiles: ldap
+ldap:
+  url: finerleague
+
+---
+
+spring:
   profiles: prod
 database:
   databaseName: finerleague
