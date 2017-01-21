@@ -77,7 +77,7 @@ public class SessionManager extends AbstractManager<SessionRepository, Session, 
      * @return the session
      */
     public Session getSession(final String token) {
-        return super.getRepository().getSession(token, true);
+        return super.getRepository().findByToken(token, true);
     }
 
     /**

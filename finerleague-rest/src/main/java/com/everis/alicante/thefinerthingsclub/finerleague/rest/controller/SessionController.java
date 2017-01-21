@@ -1,4 +1,4 @@
-package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entity;
+package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller;
 
 
 import com.everis.alicante.thefinerthingsclub.finerleague.core.manager.SessionManager;
@@ -17,6 +17,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/session")
 public class SessionController extends AbstractController<SessionManager, SessionDTO, Session, String> {
 
+    /**
+     * Instantiates a new Session controller.
+     *
+     * @param sessionManager the session manager
+     */
     @Autowired
     public SessionController(final SessionManager sessionManager) {
         super(sessionManager, SessionDTO.class, Session.class);

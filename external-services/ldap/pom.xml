@@ -12,6 +12,7 @@
   <modules>
     <module>ldap-authentication</module>
     <module>ldap-authentication-impl</module>
+    <module>ldap-server</module>
   </modules>
   
   <!-- SPRING -->

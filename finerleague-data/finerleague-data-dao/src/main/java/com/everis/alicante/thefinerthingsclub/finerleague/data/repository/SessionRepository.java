@@ -7,5 +7,5 @@ import org.springframework.data.mongodb.repository.Query;
 
 public interface SessionRepository extends MongoRepository<Session, String> {
 
-    Session getSession(final String token, Boolean valid);
+    Session findByToken(final String token, Boolean valid);
 }
