@@ -15,16 +15,16 @@ public class CustomWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addRedirectViewController("/api/v2/api-docs", "/v2/api-docs");
-        registry.addRedirectViewController("/api/swagger-resources/configuration/ui", "/swagger-resources/configuration/ui");
-        registry.addRedirectViewController("/api/swagger-resources/configuration/security", "/swagger-resources/configuration/security");
-        registry.addRedirectViewController("/api/swagger-resources", "/swagger-resources");
-        registry.addRedirectViewController("/api", "/api/swagger-ui.html");
-        registry.addRedirectViewController("/api/", "/api/swagger-ui.html");
+        registry.addRedirectViewController("/documentation/v2/api-docs", "/v2/api-docs");
+        registry.addRedirectViewController("/documentation/swagger-resources/configuration/ui", "/swagger-resources/configuration/ui");
+        registry.addRedirectViewController("/documentation/swagger-resources/configuration/security", "/swagger-resources/configuration/security");
+        registry.addRedirectViewController("/documentation/swagger-resources", "/swagger-resources");
+        registry.addRedirectViewController("/documentation", "/documentation/swagger-ui.html");
+        registry.addRedirectViewController("/documentation/", "/documentation/swagger-ui.html");
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/api/**").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/documentation/**").addResourceLocations("classpath:/META-INF/resources/");
     }
 }

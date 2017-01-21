@@ -2,7 +2,6 @@ package com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entit
 
 import com.everis.alicante.thefinerthingsclub.finerleague.core.manager.PersonManager;
 import com.everis.alicante.thefinerthingsclub.finerleague.data.entity.Person;
-import com.everis.alicante.thefinerthingsclub.finerleague.rest.controller.entity.behaviour.AllBehaviour;
 import com.everis.alicante.thefinerthingsclub.finerleague.rest.dto.repository.PersonDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/person")
-public class PersonController extends AbstractController<PersonManager, PersonDTO, Person, String> implements AllBehaviour<PersonManager, PersonDTO, Person, String> {
+public class PersonEntityController extends AbstractEntityController<PersonManager, PersonDTO, Person, String> {
 
     /**
      * Instantiates a new PersonDTO controller.
@@ -21,7 +20,7 @@ public class PersonController extends AbstractController<PersonManager, PersonDT
      * @param personManager the person manager
      */
     @Autowired
-    public PersonController(final PersonManager personManager) {
+    public PersonEntityController(final PersonManager personManager) {
         super(personManager, PersonDTO.class, Person.class);
     }
 
