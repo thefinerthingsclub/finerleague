@@ -43,7 +43,7 @@
         <mongeez.version>0.9.6</mongeez.version>
         <spring-security.version>4.2.1.RELEASE</spring-security.version>
         <javax-servlet.version>3.1.0</javax-servlet.version>
-        <apacheds.version>1.5.7</apacheds.version>
+        <apacheds.version>2.0.0-M23</apacheds.version>
     </properties>
 
     <modules>
@@ -351,17 +351,18 @@
                 <artifactId>apacheds-all</artifactId>
                 <version>${apacheds.version}</version>
                 <exclusions>
+                    <!-- exclude additional LDIF schema files to avoid conflicts through
+                        multiple copies -->
                     <exclusion>
                         <groupId>org.apache.directory.shared</groupId>
                         <artifactId>shared-ldap-schema</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-api</artifactId>
+                        <groupId>org.apache.directory.api</groupId>
+                        <artifactId>api-ldap-schema-data</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

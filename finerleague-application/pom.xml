@@ -25,10 +25,10 @@
             <artifactId>ldap-authentication-impl</artifactId>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>-->
-            <!--<artifactId>ldap-server</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+            <artifactId>ldap-server</artifactId>
+        </dependency>
 
         <!-- SPRING -->
         <dependency>
