@@ -3,17 +3,16 @@
  */
 module.exports = function() {
     var faker = require("faker");
-    var _ = require("lodash");
 
     return {
-        division: _.times(6, function(n) {
+        division: Array(6).fill(0).map(i => {
             return {
                 "name": faker.name.firstName(),
                 "priority": faker.random.number(),
                 "id": faker.random.uuid()
             }
         }),
-        game: _.times(20, function(n) {
+        game: Array(20).fill(0).map(i => {
             return {
                 "name": faker.name.firstName(),
                 "image": faker.random.image(),
@@ -24,7 +23,7 @@ module.exports = function() {
                 }
             }
         }),
-        person: _.times(10, function(n) {
+        person: Array(10).fill(0).map(i => {
             return {
                 "identifier": faker.random.uuid(),
                 "name": faker.name.firstName(),
@@ -35,6 +34,12 @@ module.exports = function() {
                     "firstDate": faker.date.future()
                 }
             }
+        }),
+        team: Array(10).fill(0).map(i => {
+              return {
+                  "id": faker.random.uuid(),
+                  "name": faker.name.firstName(),
+              }
         })
     }
-};
+}
