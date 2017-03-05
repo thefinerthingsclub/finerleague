@@ -10,3 +10,8 @@ En esta carpeta dejaremos documentación relativa al proyecto, técnica, funcion
 
 ## Technical Information
 ![Architecture](/docs/finerleaguearchitecture_480.png)
+
+## Mock Rest Services
+See all the documentation from docs/Mock Rest Sevices.pdf.
+
+![Mock Services Structure] (/docs/Mock Rest Services.png)
