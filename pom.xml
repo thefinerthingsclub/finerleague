@@ -10,6 +10,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <servlet.version>2.5</servlet.version>
         <application.version>0.0.1-SNAPSHOT</application.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -18,6 +19,7 @@
         <!-- SPRING -->
         <spring-boot.version>1.4.2.RELEASE</spring-boot.version>
         <spring.version>4.3.5.RELEASE</spring.version>
+        <spring-security.version>4.2.1.RELEASE</spring-security.version>
         <spring-data-mongodb.version>1.9.6.RELEASE</spring-data-mongodb.version>
         <!-- LOGGER -->
         <logback-classic.version>1.1.7</logback-classic.version>
@@ -54,6 +56,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet.version}</version>
+            </dependency>
             <!-- INTERNAL DEPENDENCIES -->
             <dependency>
                 <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
@@ -98,6 +105,26 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+
+            <!-- Spring Security -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+
+            <!-- Spring Security JSP Taglib -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${spring-security.version}</version>
             </dependency>
 
             <!-- Spring MVC -->
