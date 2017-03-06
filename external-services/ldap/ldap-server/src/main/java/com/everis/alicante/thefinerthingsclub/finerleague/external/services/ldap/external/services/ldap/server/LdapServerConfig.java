@@ -26,27 +26,27 @@ public class LdapServerConfig {
 
     private String url;
 
-    @PostConstruct
-    private void startServer() throws Exception {
-        logger.info("LdapServerConfig initializing...");
-        final File workingDirectory = new File(System.getProperty("java.io.tmpdir") + "/apacheds-test1");
-        FileUtils.deleteDirectory(workingDirectory);
-
-        DefaultDirectoryService directoryService = new DefaultDirectoryService();
-        directoryService.setShutdownHookEnabled(true);
-        directoryService.setAllowAnonymousAccess(true);
-
-        directoryService.getChangeLog().setEnabled(false);
-
-        directoryService.startup();
-
-        LdapServer ldapServer = new LdapServer();
-        ldapServer.setDirectoryService(directoryService);
-
-        TcpTransport ldapTransport = new TcpTransport(11111);
-        ldapServer.setTransports(ldapTransport);
-        ldapServer.start();
-    }
+//    @PostConstruct
+//    private void startServer() throws Exception {
+//        logger.info("LdapServerConfig initializing...");
+//        final File workingDirectory = new File(System.getProperty("java.io.tmpdir") + "/apacheds-test1");
+//        FileUtils.deleteDirectory(workingDirectory);
+//
+//        DefaultDirectoryService directoryService = new DefaultDirectoryService();
+//        directoryService.setShutdownHookEnabled(true);
+//        directoryService.setAllowAnonymousAccess(true);
+//
+//        directoryService.getChangeLog().setEnabled(false);
+//
+//        directoryService.startup();
+//
+//        LdapServer ldapServer = new LdapServer();
+//        ldapServer.setDirectoryService(directoryService);
+//
+//        TcpTransport ldapTransport = new TcpTransport(11111);
+//        ldapServer.setTransports(ldapTransport);
+//        ldapServer.start();
+//    }
 
     /**
      * Gets url.
