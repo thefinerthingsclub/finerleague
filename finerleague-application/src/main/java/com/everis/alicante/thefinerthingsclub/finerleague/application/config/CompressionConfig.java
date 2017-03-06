@@ -25,14 +25,13 @@ public class CompressionConfig {
         logger.info("Initializing CompressionConfig...");
     }
 
-    /**
-     * Compressing filter filter.
-     *
-     * @return the filter
-     */
-    @Bean
-    public Filter compressingFilter() {
-        CompressingFilter compressingFilter = new CompressingFilter();
-        return compressingFilter;
-    }
+//    /**
+//     * Compressing filter filter.
+//     *
+//     * @return the filter
+//     */
+//    @Bean
+//    public Filter compressingFilter() {
+//        return new CompressingFilter();
+//    }
 }

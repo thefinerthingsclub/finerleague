@@ -41,6 +41,9 @@
         <exec-maven-plugin.version>1.5.0</exec-maven-plugin.version>
         <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
         <mongeez.version>0.9.6</mongeez.version>
+        <spring-security.version>4.2.1.RELEASE</spring-security.version>
+        <javax-servlet.version>3.1.0</javax-servlet.version>
+        <apacheds.version>2.0.0-M23</apacheds.version>
     </properties>
 
     <modules>
@@ -49,6 +52,7 @@
         <module>finerleague-application</module>
         <module>finerleague-data</module>
         <module>finerleague-core</module>
+        <module>external-services</module>
     </modules>
 
 
@@ -84,6 +88,21 @@
             <dependency>
                 <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
                 <artifactId>finerleague-rest</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>ldap-authentication</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>ldap-authentication-impl</artifactId>
+                <version>${application.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.everis.alicante.thefinerthingsclub.finerleague</groupId>
+                <artifactId>ldap-server</artifactId>
                 <version>${application.version}</version>
             </dependency>
 
@@ -162,6 +181,29 @@
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb</artifactId>
                 <version>${spring-data-mongodb.version}</version>
+            </dependency>
+
+            <!-- Spring Security -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax-servlet.version}</version>
+                <scope>provided</scope>
             </dependency>
 
             <!-- DATABASE -->
@@ -301,6 +343,26 @@
                 <artifactId>pjl-comp-filter</artifactId>
                 <version>${pjl-comp-filter.version}</version>
             </dependency>
+
+            <!-- LDAP -->
+            <!-- ldap server -->
+            <dependency>
+                <groupId>org.apache.directory.server</groupId>
+                <artifactId>apacheds-all</artifactId>
+                <version>${apacheds.version}</version>
+                <exclusions>
+                    <!-- exclude additional LDIF schema files to avoid conflicts through
+                        multiple copies -->
+                    <exclusion>
+                        <groupId>org.apache.directory.shared</groupId>
+                        <artifactId>shared-ldap-schema</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.directory.api</groupId>
+                        <artifactId>api-ldap-schema-data</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -418,6 +480,12 @@
             <id>prod</id>
             <properties>
                 <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>ldap</id>
+            <properties>
+                <spring.profiles.active>ldap</spring.profiles.active>
             </properties>
         </profile>
     </profiles>
