@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { routedComponents, AppRoutingModule} from './app-routing.module';
+import { CoreModule }    from './core/core.module';
 import { GamesModule }     from './games/games.module';
 import { AppComponent } from './app.component';
 
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    CoreModule,
     GamesModule,
     AppRoutingModule
   ],
