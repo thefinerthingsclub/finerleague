@@ -1,5 +1,13 @@
-<app-header></app-header>
 <h1>
   {{title}}
 </h1>
-<app-footer></app-footer>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/games">Games</a></li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>
