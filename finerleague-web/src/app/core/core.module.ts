@@ -1,9 +1,10 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { SharedModule }     from '../shared/shared.module';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerService } from './spinner/spinner.service';
@@ -14,11 +15,10 @@ import { UserProfileService } from './user-profile.service';
 
 @NgModule({
   imports: [
-    CommonModule, // we use ngFor
-    FormsModule
+    SharedModule
   ],
-  exports: [NavComponent, SpinnerComponent],
-  declarations: [NavComponent, SpinnerComponent],
+  exports: [HeaderComponent, FooterComponent, NavComponent, SpinnerComponent],
+  declarations: [HeaderComponent, FooterComponent, NavComponent, SpinnerComponent],
   providers: [LoggerService, ExceptionService, SpinnerService, UserProfileService]
 })
 export class CoreModule { 

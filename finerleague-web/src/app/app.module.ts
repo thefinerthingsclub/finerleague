@@ -1,22 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { Routes, RouterModule } from '@angular/router';
-import { routedComponents, AppRoutingModule} from './app-routing.module';
+
+import { SharedModule }     from './shared/shared.module';
 import { CoreModule }    from './core/core.module';
 import { GamesModule }     from './games/games.module';
+import { AppRoutingModule} from './app-routing.module';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    routedComponents
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
+    SharedModule,
     CoreModule,
     GamesModule,
     AppRoutingModule
