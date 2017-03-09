@@ -9,6 +9,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
 @Component({
+  moduleId: module.id,
   selector: 'game-list',
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.css']
@@ -17,7 +18,7 @@ export class GameListComponent implements OnInit {
   public isRequesting: boolean = false;
   title: string = 'List of Games';
   games: Game[];
-  
+
   constructor(
     private service: GameService,
     private route: ActivatedRoute,
@@ -32,7 +33,7 @@ export class GameListComponent implements OnInit {
           .map((params: Params) => this.service.findAll())
           .subscribe((games: Game[])=> {
               this.games = games;
-              
+
               var that = this;
               setTimeout(function(){
                 that.spinnerService.hide();

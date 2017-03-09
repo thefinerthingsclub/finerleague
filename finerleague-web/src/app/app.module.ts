@@ -12,10 +12,10 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    SharedModule,
-    CoreModule,
     GamesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { SpinnerService } from './spinner.service';
+import { Subject } from 'rxjs/Subject';
 
 describe('SpinnerService', () => {
   beforeEach(() => {

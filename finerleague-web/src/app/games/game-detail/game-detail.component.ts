@@ -7,6 +7,7 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map'
 
 @Component({
+  moduleId: module.id,
   selector: 'game-detail',
   templateUrl: './game-detail.component.html',
   styleUrls: ['./game-detail.component.css']
@@ -14,7 +15,7 @@ import 'rxjs/add/operator/map'
 export class GameDetailComponent implements OnInit {
   title = "Game Details";
   game: Game;
-  
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
