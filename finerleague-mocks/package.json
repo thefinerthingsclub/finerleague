@@ -9,5 +9,8 @@
     "json-server": "^0.9.5",
     "lodash": "^4.17.4",
     "faker": "^4.1.0"
+  },
+  "scripts": {
+    "mock": "json-server apiMocks.js --routes routes.json"
   }
 }

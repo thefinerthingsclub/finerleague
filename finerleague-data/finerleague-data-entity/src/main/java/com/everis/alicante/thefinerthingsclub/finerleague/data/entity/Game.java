@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * The type Game.
  */
-@Document(collection = "games")
+@Document(collection = "game")
 public class Game implements EntityDocument {
 
     @Id

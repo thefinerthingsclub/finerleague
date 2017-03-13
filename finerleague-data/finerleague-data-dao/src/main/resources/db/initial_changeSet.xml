@@ -3,6 +3,8 @@
         <script>
             db.division.insert({ "_id" : ObjectId("000000000000000000000001"), "name" : "division1", "priority" : 1 });
             db.division.insert({ "_id" : ObjectId("000000000000000000000002"), "name" : "division2", "priority" : 2 });
+            db.game.insert({ "_id" : ObjectId("000000000000000000000003"), "name" : "Game 1", "image" : "http://lorempixel.com/640/480/nature" });
+            db.game.insert({ "_id" : ObjectId("000000000000000000000004"), "name" : "Game 2", "image" : "http://lorempixel.com/640/480/cats" });
         </script>
     </changeSet>
 </mongoChangeLog>

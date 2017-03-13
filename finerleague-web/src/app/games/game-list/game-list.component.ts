@@ -29,16 +29,19 @@ export class GameListComponent implements OnInit {
   ngOnInit() {
       this.spinnerService.show();
       this.isRequesting = true;
-      this.route.params
-          .map((params: Params) => this.service.findAll())
-          .subscribe((games: Game[])=> {
-              this.games = games;
 
-              var that = this;
-              setTimeout(function(){
-                that.spinnerService.hide();
-              }, 3000);
-      });
+      this.service.findAll()
+          .subscribe(games => {
+            this.games = games;
+
+            var that = this;
+            setTimeout(function(){
+              that.spinnerService.hide();
+            }, 3000);
+          }, err => {
+              // Log errors if any
+              console.log(err);
+          });
   }
 
   onSelect(game: Game) {

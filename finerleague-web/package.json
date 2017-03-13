@@ -5,10 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --bh /finerleague/",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start-mock": "ng serve --proxy-config src/proxy/proxy.conf.dev.json"
   },
   "private": true,
   "dependencies": {

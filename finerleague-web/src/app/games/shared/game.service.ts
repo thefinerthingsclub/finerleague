@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import {Observable} from 'rxjs/Rx';
+
+// Import RxJs required methods
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 import { Game } from './game';
 
 @Injectable()
 export class GameService {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
     findById(id: string){
         return new Game(id, "Game " + id, "image" + id + ".png");
     }
-    findAll(){      
-        return [
-            new Game("1", "Game 1", "image1.png"),
-            new Game("2", "Game 2", "image2.png"),
-            new Game("3", "Game 3", "image3.png")
-        ];
-    }
+    findAll(): Observable<Game[]>{
+        return this.http.get("/api/game")
+                         .map((res:Response) => res.json())
+                         .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+     }
 }
