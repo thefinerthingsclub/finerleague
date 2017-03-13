@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpModule } from '@angular/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Routes, ActivatedRoute, Router } from '@angular/router';
 
@@ -17,7 +18,7 @@ describe('GameListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ GameListComponent ],
       providers: [ GameService, SpinnerService ],
-      imports: [ RouterTestingModule.withRoutes(fake_routes) ]
+      imports: [ RouterTestingModule.withRoutes(fake_routes), HttpModule ]
     })
     .compileComponents();
   }));
