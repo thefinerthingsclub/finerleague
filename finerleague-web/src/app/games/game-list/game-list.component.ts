@@ -34,6 +34,7 @@ export class GameListComponent implements OnInit {
           .subscribe(games => {
             this.games = games;
 
+            //TODO remove this part in real app leaving the hide of the spinner.
             var that = this;
             setTimeout(function(){
               that.spinnerService.hide();
