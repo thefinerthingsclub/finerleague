@@ -61,4 +61,51 @@ describe('GamesService', () => {
           expect(game.image).toBe('image1.png');
       });
   })));
+
+  it('should insert new Game', async(inject([GameService], (gameService) => {
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        // is it the correct REST type for an insert? (POST)
+        expect(connection.request.method).toBe(RequestMethod.Post);
+        // if ok
+        connection.mockRespond(new Response(new ResponseOptions({status: 201})));
+      });
+      let game = new Game(null, 'Game new', 'imageNew.jspg');
+      gameService.save(game).subscribe((successResult) => {
+          expect(successResult).toBeDefined();
+          expect(successResult.status).toBe(201);
+          expect(successResult.ok).toBe(true);
+        });
+    })));
+
+    it('should save updates to an existing Game', async(inject([GameService], (gameService) => {
+        mockBackend.connections.subscribe((connection: MockConnection) => {
+          // is it the correct REST type for update? (PUT)
+          expect(connection.request.method).toBe(RequestMethod.Put);
+          // if ok
+          connection.mockRespond(new Response(new ResponseOptions({status: 204})));
+        });
+
+        let game = new Game("1", 'Game changed', 'imageChanged.jspg');
+        gameService.save(game).subscribe((successResult) => {
+            expect(successResult).toBeDefined();
+            expect(successResult.status).toBe(204);
+            expect(successResult.ok).toBe(true);
+          });
+      })));
+
+    it('should delete an existing Game', async(inject([GameService], (gameService) => {
+      mockBackend.connections.subscribe(connection => {
+        expect(connection.request.method).toBe(RequestMethod.Delete);
+        connection.mockRespond(new ResponseOptions({status: 204}));
+      });
+
+      gameService.delete("1").subscribe(
+        (successResult) => {
+          expect(successResult).toBeDefined();
+          expect(successResult.status).toBe(204);
+        },
+        (errorResult) => {
+          throw (errorResult);
+        });
+    })));
 });

@@ -4,7 +4,9 @@ export class Game {
   private _name: string;
 
   constructor(id: string, name: string, image: string) {
-    this._id = id;
+    if(id){
+      this._id = id;
+    }
     this._name = name;
     this._image = image;
   }
@@ -27,5 +29,13 @@ export class Game {
 
   set image(newImage: string) {
       this._image = newImage;
+  }
+
+  json() {
+    return JSON.stringify(this);
+  }
+
+  clone() {
+    return new Game(this.id, this.name, this.image);
   }
 }
