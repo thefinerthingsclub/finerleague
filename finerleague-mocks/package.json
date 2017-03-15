@@ -11,6 +11,6 @@
     "faker": "^4.1.0"
   },
   "scripts": {
-    "mock": "json-server apiMocks.js --routes routes.json"
+    "server:mocks": "json-server apiMocks.js --routes routes.json"
   }
 }

@@ -16,7 +16,6 @@ import 'rxjs/add/operator/map'
 })
 export class GameListComponent implements OnInit {
   public isRequesting: boolean = false;
-  title: string = 'List of Games';
   games: Game[];
 
   constructor(

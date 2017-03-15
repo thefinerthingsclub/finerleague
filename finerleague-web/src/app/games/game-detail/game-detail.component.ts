@@ -14,7 +14,6 @@ import 'rxjs/add/operator/map'
   styleUrls: ['./game-detail.component.css']
 })
 export class GameDetailComponent implements OnInit {
-  title = "Game Details";
   game: Game;
 
   constructor(

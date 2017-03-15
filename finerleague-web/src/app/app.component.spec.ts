@@ -17,7 +17,7 @@ import { LoggerService } from './core/logger.service';
 import { ExceptionService } from './core/exception.service';
 import { SpinnerService } from './core/spinner/spinner.service';
 
-const appTitle = 'Finer League Propose Structure!';
+const appTitle = 'Hello Finerleague';
 export const fake_routes: Routes = [{path: 'detail/:id', component: HeaderComponent}];
 
 @Component({template: ''})
@@ -53,14 +53,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'Finer League Propose Structure!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual(appTitle);
-  }));
-
-  it('should render title in a h1 tag', async(() => {
+  it('should render title "'+appTitle+'" in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

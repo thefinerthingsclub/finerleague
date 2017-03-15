@@ -4,13 +4,19 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "start-mock": "ng serve --proxy-config src/proxy/proxy.conf.dev.json",
+    "start": "ng serve --proxy-config src/proxy/proxy.conf.json",
+    "start:mocks": "ng serve --proxy-config src/proxy/proxy.conf.mock.json",
     "build": "ng build",
-    "build-prod": "ng build --prod",
+
+    "build:prod:en": "ng build -prod",
+    "build:prod:es": "ng build -prod --output-path=dist/es --aot --i18n-file=src/i18n/messages.es.xlf --locale=es",
+    "build:prod:it": "ng build -prod --output-path=dist/it --aot --i18n-file=src/i18n/messages.it.xlf --locale=it",
+    "build:prod": "npm-run-all build:prod:en build:prod:es build:prod:it",
+
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "i18n:extract": "ng xi18n --output-path src/i18n"
   },
   "private": true,
   "dependencies": {
@@ -38,9 +44,10 @@
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "npm-run-all": "^4.0.2",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",

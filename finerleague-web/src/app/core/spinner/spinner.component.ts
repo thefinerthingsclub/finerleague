@@ -11,23 +11,22 @@ import { SpinnerState, SpinnerService } from './spinner.service';
 })
 export class SpinnerComponent implements OnDestroy, OnInit {
     visible = false;
-  
+
     private spinnerStateChanged: Subscription;
-  
+
     constructor(
         private loggerService: LoggerService,
         private spinnerService: SpinnerService
     ) { }
-  
+
     ngOnInit() {
-        console.log(this.visible);
         this.spinnerStateChanged = this.spinnerService.spinnerState
             .subscribe((state: SpinnerState) => {
                 this.visible = state.show;
                 this.loggerService.log(`visible=${this.visible}`);
         });
     }
-  
+
     ngOnDestroy() {
         this.spinnerStateChanged.unsubscribe();
     }
