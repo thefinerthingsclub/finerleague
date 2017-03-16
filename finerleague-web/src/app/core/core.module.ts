@@ -14,6 +14,7 @@ import { LoggerService } from './logger.service';
 import { ExceptionService } from './exception.service';
 import { UserProfileService } from './user-profile.service';
 
+
 @NgModule({
   imports: [
     SharedModule

@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 
 import { Routes, RouterModule } from '@angular/router';
+import { GamesComponent } from './games.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { GameCreateComponent } from './game-create/game-create.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 
-export const gameRoutes: Routes = [
-    {path: '', pathMatch: 'full', redirectTo: 'games'},
-    {path: 'games', component: GameListComponent},
-    {path: 'games/createNew', component: GameCreateComponent},
-    {path: 'games/detail/:id', component: GameDetailComponent}
-];
+export const gameRoutes: Routes = [{
+    path: '',
+    component: GamesComponent,
+    children: [
+        { path: '', component: GameListComponent },
+        { path: 'detail/:id', component: GameDetailComponent },
+        { path: 'create', component: GameCreateComponent }
+    ]
+}];
 
 @NgModule({
     imports: [RouterModule.forChild(gameRoutes)],
@@ -18,4 +22,9 @@ export const gameRoutes: Routes = [
 })
 export class GamesRoutingModule {}
 
-export const gamesRoutedComponents = [GameListComponent, GameCreateComponent, GameDetailComponent];
+export const gamesRoutedComponents = [
+  GamesComponent,
+  GameListComponent,
+  GameCreateComponent,
+  GameDetailComponent
+];

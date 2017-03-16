@@ -13,16 +13,13 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { NavComponent } from './core/nav/nav.component';
 import { SpinnerComponent } from './core/spinner/spinner.component';
+import { LoginComponent } from './shared/login/login.component';
 import { LoggerService } from './core/logger.service';
 import { ExceptionService } from './core/exception.service';
 import { SpinnerService } from './core/spinner/spinner.service';
 
 const appTitle = 'Hello Finerleague';
-export const fake_routes: Routes = [{path: 'detail/:id', component: HeaderComponent}];
-
-@Component({template: ''})
-class DummyComponent {
-}
+export const fake_routes: Routes = [{path: 'login', component: LoginComponent}];
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -33,15 +30,13 @@ describe('AppComponent', () => {
         FooterComponent,
         NavComponent,
         SpinnerComponent,
-        DummyComponent
+        LoginComponent
       ],
       schemas: [ NO_ERRORS_SCHEMA ],
       providers: [LoggerService, ExceptionService, SpinnerService],
       imports: [
         CommonModule,
-        RouterTestingModule.withRoutes([
-         { path: 'settings/:collection/edit/:item', component: DummyComponent }
-        ])
+        RouterTestingModule.withRoutes(fake_routes)
       ]
     }).compileComponents();
   }));

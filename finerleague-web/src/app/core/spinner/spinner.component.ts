@@ -5,7 +5,7 @@ import { SpinnerState, SpinnerService } from './spinner.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'spinner',
+  selector: 'dmfa-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.css']
 })
@@ -20,10 +20,10 @@ export class SpinnerComponent implements OnDestroy, OnInit {
     ) { }
 
     ngOnInit() {
+        this.loggerService.log('... initializing spinner component from core module.');
         this.spinnerStateChanged = this.spinnerService.spinnerState
             .subscribe((state: SpinnerState) => {
                 this.visible = state.show;
-                this.loggerService.log(`visible=${this.visible}`);
         });
     }
 

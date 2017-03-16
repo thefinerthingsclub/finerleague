@@ -4,18 +4,21 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+
     "start": "ng serve --proxy-config src/proxy/proxy.conf.json",
     "start:mocks": "ng serve --proxy-config src/proxy/proxy.conf.mock.json",
-    "build": "ng build",
 
+    "build": "ng build",
     "build:prod:en": "ng build -prod",
     "build:prod:es": "ng build -prod --output-path=dist/es --aot --i18n-file=src/i18n/messages.es.xlf --locale=es",
     "build:prod:it": "ng build -prod --output-path=dist/it --aot --i18n-file=src/i18n/messages.it.xlf --locale=it",
     "build:prod": "npm-run-all build:prod:en build:prod:es build:prod:it",
 
     "test": "ng test",
-    "lint": "ng lint",
+    "test:coverage": "ng test -cc",
     "e2e": "ng e2e",
+    "lint": "ng lint",
+
     "i18n:extract": "ng xi18n --output-path src/i18n"
   },
   "private": true,

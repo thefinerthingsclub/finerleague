@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Game } from '../shared/game';
 import { GameService } from '../shared/game.service';
 import { SpinnerService } from '../../core/spinner/spinner.service';
+import { LoggerService } from '../../core/logger.service';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
@@ -19,6 +20,7 @@ export class GameListComponent implements OnInit {
   games: Game[];
 
   constructor(
+    private loggerService: LoggerService,
     private service: GameService,
     private route: ActivatedRoute,
     private router: Router,
@@ -26,6 +28,7 @@ export class GameListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+      this.loggerService.log('... initializing game list component.');
       this.spinnerService.show();
       this.isRequesting = true;
 

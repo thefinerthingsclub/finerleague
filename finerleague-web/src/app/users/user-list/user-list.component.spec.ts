@@ -5,21 +5,19 @@ import { HttpModule } from '@angular/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Routes, ActivatedRoute, Router } from '@angular/router';
 
-import { GameListComponent } from './game-list.component';
-import { GameService } from '../shared/game.service';
-import { SpinnerService } from '../../core/spinner/spinner.service';
+import { UserListComponent } from './user-list.component';
 import { LoggerService } from '../../core/logger.service';
 
-export const fake_routes: Routes = [{path: 'games', component: GameListComponent}];
+export const fake_routes: Routes = [{path: 'users', component: UserListComponent}];
 
-describe('GameListComponent', () => {
-  let component: GameListComponent;
-  let fixture: ComponentFixture<GameListComponent>;
+describe('UserListComponent', () => {
+  let component: UserListComponent;
+  let fixture: ComponentFixture<UserListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameListComponent ],
-      providers: [ GameService, SpinnerService, LoggerService ],
+      declarations: [ UserListComponent ],
+      providers: [ LoggerService ],
       imports: [ RouterTestingModule.withRoutes(fake_routes), HttpModule ],
       schemas: [ NO_ERRORS_SCHEMA ]
     })
@@ -27,12 +25,12 @@ describe('GameListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameListComponent);
+    fixture = TestBed.createComponent(UserListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create an instance of the users list component', () => {
     expect(component).toBeTruthy();
   });
 });
