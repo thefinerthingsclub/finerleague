@@ -7,8 +7,8 @@ describe('finerleague-web App', () => {
     page = new FinerleagueWebPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying "Hello Finerleague"', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Hello Finerleague');
   });
 });
