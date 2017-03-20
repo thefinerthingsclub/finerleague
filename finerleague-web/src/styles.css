@@ -1,1 +1,133 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~font-awesome/css/font-awesome.css';
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Open Sans", Tahoma, Arial, Helvetica, Sans-Serif;
+    font-size: 14px;
+}
+
+
+/*
+--------------------------------
+ Headings
+--------------------------------
+*/
+
+h1, h2, h3, h4, h6,
+.h1, .h2, .h3, .h4, .h6 {
+    font-family: "Open Sans", Tahoma, Arial, Helvetica, Sans-Serif;
+    text-align: left;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+h1, .h1 {
+    font-size: 34px;
+    color: #333;
+    text-align: left;
+    margin-top: 0;
+}
+
+h3, .h3 {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+h4, .h4 {
+    font-size: 18px;
+    color: #666;
+}
+
+h6, .h6 {
+    font-size: 18px;
+    color: #333333;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+/*
+--------------------------------
+ Paragraphs
+--------------------------------
+*/
+
+p {
+    font-size: 14px;
+}
+
+
+/*
+--------------------------------
+ Links
+--------------------------------
+*/
+
+a {
+    font-family: "Open Sans", Tahoma, Arial, Helvetica, Sans-Serif;
+    font-size: 14px;
+    color: #457f81;
+    text-align: center;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #457f81;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #295a5b;
+    text-decoration: none;
+}
+
+a:visited {
+    font-size: 14px;
+    color: #295a5b;
+    text-align: center;
+}
+
+
+/*
+--------------------------------
+ Labels
+--------------------------------
+*/
+
+label {
+    font-weight: normal;
+    line-height: 34px;
+}
+
+/*
+--------------------------------
+ Select
+--------------------------------
+*/
+select {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+}

@@ -1,0 +1,7 @@
+<h2 i18n>List of Games</h2>
+<ul class="items">
+  <li *ngFor="let game of games" (click)="onSelect(game)">
+      <span class="badge">{{ game.id }} - </span> {{ game.name }} <u>click me</u>
+  </li>
+</ul>
+<button routerLink="/games/create">Create new</button> | <button routerLink="/sidekicks">Go to Incorrect Route</button>

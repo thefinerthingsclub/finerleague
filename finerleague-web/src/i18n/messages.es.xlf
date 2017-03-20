@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="fb3c8490e2c0c68b89fbea88ee5ef332ca893e01" datatype="html">
+        <source>This is the LOGIN page</source>
+        <target>Esta es la pagina de LOGIN</target>
+      </trans-unit>
+      <trans-unit id="9afb931ad43d81698a7bda618c9a91325fb4b0e9" datatype="html">
+        <source>Hello Finerleague</source>
+        <target>Hola Finerleague</target>
+      </trans-unit>
+	  <trans-unit id="544a86590999e27aa19b8f333fc0a70c61de761f" datatype="html">
+        <source>This is a HEADER</source>
+        <target>Este es el HEADER</target>
+      </trans-unit>
+      <trans-unit id="fbb76ebced202298049210752e25203718a646fd" datatype="html">
+        <source>This is a FOOTER</source>
+        <target>Este es el FOOTER</target>
+      </trans-unit>
+      <trans-unit id="0358d7eb3900bf36f301afd6fbdf59558054f102" datatype="html">
+        <source>List of Games</source>
+        <target>Lista de Juegos</target>
+      </trans-unit>
+      <trans-unit id="6843b7ffa60464180fc07559a6fb190a5f8c3ece" datatype="html">
+        <source>Create New Game</source>
+        <target>Crea nuevo Juego</target>
+      </trans-unit>
+      <trans-unit id="fb00a3e8bf4c72eaf0847e1be53e185c7d82b9fe" datatype="html">
+        <source>Game Details</source>
+        <target>Detalles del Juego</target>
+      </trans-unit>
+      <trans-unit id="ce97a527226844f19082cb4413760bf4877173cf" datatype="html">
+        <source>List of Users</source>
+        <target>Lista de Usuarios</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
