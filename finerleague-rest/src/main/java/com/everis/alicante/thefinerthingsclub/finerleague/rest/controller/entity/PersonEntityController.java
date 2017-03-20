@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * The type PersonDTO controller.
  */
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/api/person")
 public class PersonEntityController extends AbstractEntityController<PersonManager, PersonDTO, Person, String> {
 
     /**

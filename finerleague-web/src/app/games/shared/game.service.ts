@@ -12,7 +12,7 @@ import { Game } from './game';
 
 @Injectable()
 export class GameService extends BaseService{
-  protected urlService = "/api/game";
+  protected urlService = this.rootContext + "/api/game";
 
   constructor(protected http: Http) { super(http); }
 

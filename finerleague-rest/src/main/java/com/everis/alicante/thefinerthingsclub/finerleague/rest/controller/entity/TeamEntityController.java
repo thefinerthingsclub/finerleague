@@ -16,7 +16,7 @@ import java.util.List;
  * The type Person controller.
  */
 @RestController
-@RequestMapping("/team")
+@RequestMapping("/api/team")
 public class TeamEntityController extends AbstractEntityController<TeamManager, TeamDTO, Team, String> {
 
     /**

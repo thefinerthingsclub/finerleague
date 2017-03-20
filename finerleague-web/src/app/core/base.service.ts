@@ -4,8 +4,14 @@ import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class BaseService {
+  protected rootContext: string;
 
-  constructor(protected http: Http) { }
+  constructor(protected http: Http) {
+    this.rootContext = location.pathname.split("/").filter(n => n)[0] || "";
+    if(this.rootContext.length > 0){
+      this.rootContext = "/" + this.rootContext;
+    }
+  }
 
   protected getOptions(): RequestOptions {
       let headers: Headers = new Headers();

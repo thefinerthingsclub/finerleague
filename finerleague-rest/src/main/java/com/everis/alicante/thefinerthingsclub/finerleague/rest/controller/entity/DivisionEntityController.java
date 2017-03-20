@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/division")
+@RequestMapping("/api/division")
 public class DivisionEntityController extends AbstractEntityController<DivisionManager, DivisionDTO, Division, String> {
 
     @Autowired
