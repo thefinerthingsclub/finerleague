@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Inject, LOCALE_ID} from '@angular/core';
 
 @Component({
   selector: 'app-home',
