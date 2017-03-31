@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './shared/login/login.component';
 import { PageNotFoundComponent } from './shared/not-found/not-found.component';
-import {HomeComponent} from "./core/home/home.component";
 
 
 export const appRoutes: Routes = [
@@ -11,7 +9,6 @@ export const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'games', loadChildren: 'app/games/games.module#GamesModule'},
   {path: 'users', loadChildren: 'app/users/users.module#UsersModule'},
-  {path: 'home', component: HomeComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 

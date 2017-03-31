@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loggerService.log('... initializing login component from shared module.');
     //TODO: check auth control
-    this.router.navigate(['/home']);
+    this.loggerService.log("Auto login")
+    this.router.navigate(['/games']);
   }
 
 }
