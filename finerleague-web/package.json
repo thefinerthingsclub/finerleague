@@ -22,7 +22,7 @@
     "server:mocks": "json-server prototype/apiMocks.js --routes prototype/routes.json",
     "start:mocks": "npm-run-all --parallel client:mocks server:mocks",
 
-    "client:app": "ng serve -bh finerleague --proxy-config src/proxy/proxy.conf.json",
+    "client:app": "ng serve --proxy-config src/proxy/proxy.conf.json",
     "start": "npm-run-all --parallel client:app"
   },
   "private": true,
