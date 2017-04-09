@@ -5,7 +5,7 @@ import { Game } from '../shared/game';
 import { GameService } from '../shared/game.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 @Component({
   moduleId: module.id,

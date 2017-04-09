@@ -4,7 +4,7 @@ export class Game {
   private _name: string;
 
   constructor(id: string, name: string, image: string) {
-    if(id){
+    if (id) {
       this._id = id;
     }
     this._name = name;

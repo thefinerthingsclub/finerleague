@@ -1,6 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
-import { SharedModule }     from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
 import { HeaderComponent } from './header/header.component';

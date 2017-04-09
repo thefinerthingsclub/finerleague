@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LoggerService } from '../../core/logger.service';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loggerService.log('... initializing login component from shared module.');
-    //TODO: check auth control
-    this.loggerService.log("Auto login")
+    // TODO: check auth control
+    this.loggerService.log('Auto login');
     this.router.navigate(['/games']);
   }
 

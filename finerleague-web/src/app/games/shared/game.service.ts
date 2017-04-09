@@ -11,18 +11,18 @@ import 'rxjs/add/operator/catch';
 import { Game } from './game';
 
 @Injectable()
-export class GameService extends BaseService{
-  protected urlService = this.rootContext + "/api/game";
+export class GameService extends BaseService {
+  protected urlService = this.rootContext + '/api/game';
 
   constructor(protected http: Http) { super(http); }
 
-    findById(id: string): Observable<Game>{
-        return this.http.get(this.urlService + "/" + id)
+    findById(id: string): Observable<Game> {
+        return this.http.get(this.urlService + '/' + id)
                          .map(this.extractData)
                          .catch(this.handleError);
     }
 
-    findAll(): Observable<Game[]>{
+    findAll(): Observable<Game[]> {
         return this.http.get(this.urlService)
                          .map(this.extractData)
                          .catch(this.handleError);

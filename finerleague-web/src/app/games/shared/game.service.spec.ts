@@ -31,8 +31,8 @@ describe('GamesService', () => {
 
   it('should get list of all games', async(inject([GameService], (gameService) => {
       const mockResponse = [
-        { id: "1", name: 'Game 1', image: 'image1.png' },
-        { id: "2", name: 'Game 2', image: 'image2.png' }
+        { id: '1', name: 'Game 1', image: 'image1.png' },
+        { id: '2', name: 'Game 2', image: 'image2.png' }
       ];
       mockBackend.connections.subscribe((connection: MockConnection) => {
         connection.mockRespond(new Response(new ResponseOptions({ body: mockResponse })));
@@ -40,14 +40,14 @@ describe('GamesService', () => {
 
       gameService.findAll().subscribe((data) => {
           expect(data.length).toBe(2);
-          expect(data[0].id).toBe("1");
+          expect(data[0].id).toBe('1');
           expect(data[0].name).toBe('Game 1');
           expect(data[0].image).toBe('image1.png');
       });
   })));
 
   it('should get game by id', async(inject([GameService], (gameService) => {
-      const mockResponse = { id: "1", name: 'Game 1', image: 'image1.png' };
+      const mockResponse = { id: '1', name: 'Game 1', image: 'image1.png' };
 
       mockBackend.connections.subscribe((connection: MockConnection) => {
         // make sure the URL is correct
@@ -55,8 +55,8 @@ describe('GamesService', () => {
         connection.mockRespond(new Response(new ResponseOptions({ body: mockResponse })));
       });
 
-      gameService.findById("1").subscribe((game: Game) => {
-          expect(game.id).toBe("1");
+      gameService.findById('1').subscribe((game: Game) => {
+          expect(game.id).toBe('1');
           expect(game.name).toBe('Game 1');
           expect(game.image).toBe('image1.png');
       });
@@ -96,10 +96,10 @@ describe('GamesService', () => {
     it('should delete an existing Game', async(inject([GameService], (gameService) => {
       mockBackend.connections.subscribe(connection => {
         expect(connection.request.method).toBe(RequestMethod.Delete);
-        connection.mockRespond(new ResponseOptions({status: 204}));
+        connection.mockRespond(<Response>new ResponseOptions({status: 204}));
       });
 
-      gameService.delete("1").subscribe(
+      gameService.delete('1').subscribe(
         (successResult) => {
           expect(successResult).toBeDefined();
           expect(successResult.status).toBe(204);
