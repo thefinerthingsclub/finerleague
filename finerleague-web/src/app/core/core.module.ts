@@ -13,6 +13,7 @@ import { BaseService } from './base.service';
 import { LoggerService } from './logger.service';
 import { ExceptionService } from './exception.service';
 import { UserProfileService } from './user-profile.service';
+import {AuthenticationService} from "./authentication.service";
 
 
 @NgModule({
@@ -21,7 +22,14 @@ import { UserProfileService } from './user-profile.service';
   ],
   exports: [HeaderComponent, FooterComponent, NavComponent, SpinnerComponent],
   declarations: [HeaderComponent, FooterComponent, NavComponent, SpinnerComponent],
-  providers: [BaseService, LoggerService, ExceptionService, SpinnerService, UserProfileService]
+  providers: [
+    BaseService,
+    LoggerService,
+    ExceptionService,
+    SpinnerService,
+    UserProfileService,
+    AuthenticationService
+  ]
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {

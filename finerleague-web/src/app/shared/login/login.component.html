@@ -1,1 +1,15 @@
-<h2 i18n>This is the LOGIN page</h2>
+<div class="col-md-6 col-md-offset-3">
+  <h2>Login</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+    <label>Email:</label>
+    <input type="text" formControlName="email" placeholder="Email">
+    <p *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.dirty">This field is required!</p>
+
+    <label>Password:</label>
+    <input type="text" formControlName="password" placeholder="Password">
+    <p *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">This field is required!</p>
+
+    <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+</div>
