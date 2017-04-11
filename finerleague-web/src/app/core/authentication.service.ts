@@ -1,9 +1,11 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, Response} from "@angular/http";
 import {LoggerService} from "./logger.service";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map'
 
 export interface IAuth{
-  email: string,
+  username: string,
   password: string
 }
 
@@ -18,7 +20,17 @@ export class AuthenticationService {
 
   login(auth: IAuth){
       //TODO login method
-      this.loggerService.log(`Se ha llamado al login con ${auth.email} y ${auth.password}`);
+      this.loggerService.log(`Se ha llamado al login con ${auth.username} y ${auth.password}`);
+      return this.http.post('/api/authenticate', JSON.stringify({ username: auth.username, password: auth.password }))
+        .map((response: Response) => {
+          // login successful if there's a jwt token in the response
+          let user = response.json();
+          if (user && user.token) {
+            // store user details and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('currentUser', JSON.stringify(user));
+          }
+      });
+
   }
 
 
@@ -27,4 +39,12 @@ export class AuthenticationService {
       //TODO logout method
       //localStorage.removeItem('currentUser');
   }
+}
+
+export class User {
+  id: number;
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
 }

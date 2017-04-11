@@ -15,6 +15,11 @@ import { ExceptionService } from './exception.service';
 import { UserProfileService } from './user-profile.service';
 import {AuthenticationService} from "./authentication.service";
 
+// used to create fake backend
+import {fakeBackendProvider} from "../shared/fake-backend";
+import {BaseRequestOptions} from "@angular/http";
+import {MockBackend} from "@angular/http/testing";
+
 
 @NgModule({
   imports: [
@@ -28,7 +33,12 @@ import {AuthenticationService} from "./authentication.service";
     ExceptionService,
     SpinnerService,
     UserProfileService,
-    AuthenticationService
+    AuthenticationService,
+
+    // providers used to create fake backend
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
   ]
 })
 export class CoreModule {

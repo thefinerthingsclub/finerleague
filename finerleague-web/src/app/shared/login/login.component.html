@@ -2,9 +2,9 @@
   <h2>Login</h2>
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
-    <label>Email:</label>
-    <input type="text" formControlName="email" placeholder="Email">
-    <p *ngIf="!loginForm.controls.email.valid && loginForm.controls.email.dirty">This field is required!</p>
+    <label>User:</label>
+    <input type="text" formControlName="username" placeholder="Email">
+    <p *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.dirty">This field is required!</p>
 
     <label>Password:</label>
     <input type="text" formControlName="password" placeholder="Password">

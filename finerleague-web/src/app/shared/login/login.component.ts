@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loggerService.log('... initializing login component from shared module.');
     this.loginForm = this.fb.group({
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required]
     });
     //TODO: check auth control
@@ -39,7 +39,14 @@ export class LoginComponent implements OnInit {
 
   public onSubmit({value, valid}: {value: IAuth, valid: boolean}):void {
     if (valid){
-      this.authenticationService.login(value);
+      this.authenticationService.login(value).subscribe(
+        data => {
+          console.log(`retorno OK`);
+        },
+        error => {
+          console.log('retorno erroneo');
+        }
+      );
     }
   }
 
