@@ -1,1 +1,4 @@
-<h2 i18n>This is the LOGIN page</h2>
+<div [ngSwitch]="layout">
+  <h3 *ngSwitchCase="'horizontal'" i18n>Horizontal login</h3>
+  <h2 *ngSwitchDefault i18n>This is the LOGIN page</h2>
+</div>
