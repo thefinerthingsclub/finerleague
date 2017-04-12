@@ -1,9 +1,8 @@
-.footer {
+footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
+  background-color: #8ec9e8;
+  padding-top: 10px;
 }

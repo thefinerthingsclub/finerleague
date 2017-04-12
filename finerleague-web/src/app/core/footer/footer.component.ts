@@ -9,7 +9,10 @@ import { LoggerService } from '../logger.service';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private loggerService: LoggerService) { }
+  year: Number;
+  constructor(private loggerService: LoggerService) {
+    this.year = new Date().getFullYear();
+  }
 
   ngOnInit() {
     this.loggerService.log('... initializing footer component from core module.');
