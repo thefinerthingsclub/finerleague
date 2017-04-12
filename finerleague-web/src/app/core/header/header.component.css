@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #8ec9e8;
+}
+.navbar-brand {
+  height: 70px;
+  padding: 10px 15px;
+}
+.navbar-brand>img {
+  height: 100%;
+  width: auto;
+}
+.navbar-right{
+  margin-right: 0;
+}

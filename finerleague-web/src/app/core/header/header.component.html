@@ -1,1 +1,13 @@
-<h1 i18n>This is a HEADER</h1>
+<nav [ngClass]="['navbar', 'navbar-default', 'navbar-fixed-top']">
+  <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#" i18n>
+          <img src="assets/images/logo.png" style="display: inline-block;">
+          Finer League
+        </a>
+      </div>
+      <div class="navbar-right">
+            <fl-login layout="horizontal"></fl-login>
+      </div>
+  </div>
+</nav>
