@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Game } from '../shared/game';
 import { GameService } from '../shared/game.service';
 import { SpinnerService } from '../../core/spinner/spinner.service';
 import { LoggerService } from '../../core/logger.service';
 
-import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Component({
