@@ -4,8 +4,7 @@ import { LoggerService } from '../../core/logger.service';
 import { Router } from '@angular/router';
 
 @Component({
-  moduleId: module.id,
-  selector: 'fl-login',
+  selector: 'ftc-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

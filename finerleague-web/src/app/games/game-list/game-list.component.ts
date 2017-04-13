@@ -10,8 +10,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Component({
-  moduleId: module.id,
-  selector: 'game-list',
+  selector: 'ftc-game-list',
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.css']
 })
