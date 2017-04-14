@@ -1,1 +1,14 @@
 <h1 i18n>Create New Game</h1>
+
+<form [formGroup]="gameForm" novalidate>
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="saveGame()">Save</button>
+  <button type="button" class="btn btn-secondary">Reset</button>
+</form>
+
+<p>Form value: {{ gameForm.value | json }}</p>
+<p>Form status: {{ gameForm.status | json }}</p>
