@@ -14,10 +14,12 @@ import { LoggerService } from './logger.service';
 import { ExceptionService } from './exception.service';
 import { UserProfileService } from './user-profile.service';
 
+import {AppRoutingModule} from "../app-routing.module";
+
 
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule, AppRoutingModule
   ],
   exports: [HeaderComponent, FooterComponent, NavComponent, SpinnerComponent],
   declarations: [HeaderComponent, FooterComponent, NavComponent, SpinnerComponent],
