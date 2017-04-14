@@ -9,3 +9,13 @@
         <td><img src="{{game.image}}" alt="{{game.name}}" /></td>
     </tr>
 </table>
+<div class="btn-group">
+  <a routerLink="/games">
+    <button class="btn btn-secondary btn-sm">
+        <i class="fa fa-arrow-left"></i> Back
+    </button>
+  </a>
+  <button (click)="delete(game.id)" class="btn btn-danger btn-sm">
+    <i class="fa fa-times"></i> Delete
+  </button>
+</div>
