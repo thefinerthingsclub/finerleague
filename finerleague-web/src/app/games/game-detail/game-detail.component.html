@@ -10,11 +10,9 @@
     </tr>
 </table>
 <div class="btn-group">
-  <a routerLink="/games">
-    <button class="btn btn-secondary btn-sm">
-        <i class="fa fa-arrow-left"></i> Back
-    </button>
-  </a>
+  <button class="btn btn-secondary btn-sm" routerLink="/games">
+    <i class="fa fa-arrow-left"></i> Back
+  </button>
   <button (click)="delete(game.id)" class="btn btn-danger btn-sm">
     <i class="fa fa-times"></i> Delete
   </button>

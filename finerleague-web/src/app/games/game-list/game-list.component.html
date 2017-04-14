@@ -5,11 +5,9 @@
       <span class="badge badge-default">{{ game.id }} - </span>
       <span>{{ game.name }}</span>
       <div class="btn-group">
-        <a routerLink="/games/detail/{{game.id}}">
-          <button class="btn btn-secondary btn-sm">
-              <i class="fa fa-search"></i>
-          </button>
-        </a>
+        <button routerLink="/games/detail/{{game.id}}" class="btn btn-secondary btn-sm">
+          <i class="fa fa-search"></i>
+        </button>
         <button (click)="delete(game.id)" class="btn btn-danger btn-sm">
           <i class="fa fa-times"></i>
         </button>
