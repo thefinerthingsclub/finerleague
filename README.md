@@ -14,4 +14,4 @@ En esta carpeta dejaremos documentación relativa al proyecto, técnica, funcion
 ## Mock Rest Services
 See all the documentation from docs/Mock Rest Sevices.pdf.
 
-![Mock Services Structure](/docs/Mock Rest Services.png)
+![Mock Services Structure](/docs/Mock_Rest_Services.png)
