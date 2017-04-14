@@ -31,9 +31,13 @@ export class GameCreateComponent {
     let game: Game = new Game(
       null,
       this.gameForm.value.name,
-      'asd'
+      null
       );
     return game;
+  }
+
+  reset() {
+    this.gameForm.reset();
   }
 
 }

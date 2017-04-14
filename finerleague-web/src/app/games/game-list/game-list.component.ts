@@ -45,7 +45,12 @@ export class GameListComponent implements OnInit {
           });
   }
 
-  onSelect(game: Game) {
-    this.router.navigate(['/games/detail', game.id]);
+  delete(id: string) {
+    this.service.delete(id).subscribe(res => {
+      if(res.ok) {
+        let index = this.games.findIndex(game => game.id === id);
+        this.games.splice(index, 1);
+      }
+    });
   }
 }
