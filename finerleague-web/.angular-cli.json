@@ -20,7 +20,8 @@
       "prefix": "ftc",
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.css"
       ],
       "addons": [
           "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"

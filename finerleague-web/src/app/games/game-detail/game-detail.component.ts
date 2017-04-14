@@ -31,4 +31,17 @@ export class GameDetailComponent implements OnInit {
       });
     });
   }
+
+  delete(id: string) {
+    let confirmation = window.confirm('Are you sure you want to delete this game?');
+    if (confirmation) {
+      this.service.delete(id).subscribe(res => {
+        if (res.ok) {
+          this.router.navigate(['/games']);
+        }else {
+          alert('Couldn\'t delete 💩');
+        }
+      });
+    }
+  }
 }

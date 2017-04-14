@@ -1,7 +1,17 @@
 <h2 i18n>List of Games</h2>
-<ul class="items">
-  <li *ngFor="let game of games" (click)="onSelect(game)">
-      <span class="badge badge-default">{{ game.id }} - </span> {{ game.name }} <u>click me</u>
+<ul class="list-group">
+  <li *ngFor="let game of games" class="list-group-item d-flex justify-content-between">
+
+      <span class="badge badge-default">{{ game.id }} - </span>
+      <span>{{ game.name }}</span>
+      <div class="btn-group">
+        <button routerLink="/games/detail/{{game.id}}" class="btn btn-secondary btn-sm">
+          <i class="fa fa-search"></i>
+        </button>
+        <button (click)="delete(game.id)" class="btn btn-danger btn-sm">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
   </li>
 </ul>
 <button class="btn btn-default" routerLink="/games/create">Create new</button> | <button class="btn btn-default" routerLink="/sidekicks">Go to Incorrect Route</button>
