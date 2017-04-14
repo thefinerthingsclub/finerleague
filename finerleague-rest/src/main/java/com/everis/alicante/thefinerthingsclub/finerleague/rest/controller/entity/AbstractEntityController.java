@@ -82,7 +82,7 @@ public abstract class AbstractEntityController<M extends AbstractManager, O exte
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(ID id) {
+    public void delete(final @PathVariable ID id) {
         getManager().delete(id);
     }
 

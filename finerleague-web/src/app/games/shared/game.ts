@@ -32,7 +32,11 @@ export class Game {
   }
 
   json() {
-    return JSON.stringify(this);
+    return {
+      id: this.id,
+      name: this.name,
+      image: this.image
+    };
   }
 
   clone() {

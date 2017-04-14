@@ -1,0 +1,25 @@
+.app {
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+:host main {
+  flex: 1;
+}
+
+:host ftc-nav {
+flex: 0 0 5em;
+}
+
+@media (min-width: 768px) {
+  .app-body {
+    flex-direction: row;
+    flex: 1;
+  }
+}

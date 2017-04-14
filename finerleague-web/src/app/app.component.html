@@ -1,8 +1,11 @@
-<div class="app">
+<div class="app d-flex">
   <ftc-header></ftc-header>
-  <main>
-    <ftc-spinner></ftc-spinner>
-    <router-outlet></router-outlet>
-  </main>
+  <div class="app-body">
+    <ftc-nav class="align-self-center pr-1"></ftc-nav>
+    <main class="p-1">
+      <ftc-spinner></ftc-spinner>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
   <ftc-footer></ftc-footer>
 </div>
