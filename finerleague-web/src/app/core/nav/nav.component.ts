@@ -12,9 +12,9 @@ export class NavComponent implements OnInit {
 
     ngOnInit() {
         this.menus = [
-            new Menu('Login', '/login'),
-            new Menu('Games', '/games'),
-            new Menu('Users', '/users')
+            new Menu('Login', '/login', 'fa-home'),
+            new Menu('Games', '/games', 'fa-gamepad'),
+            new Menu('Users', '/users', 'fa-users')
         ];
     }
     constructor() { }
