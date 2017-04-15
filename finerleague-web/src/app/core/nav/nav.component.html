@@ -1,7 +1,25 @@
 <nav>
-  <ul class="list-group">
-    <li class="list-group-item"*ngFor="let menu of menus">
-      <a routerLink="{{menu.action}}" class="text-center"><i class="fa fa-2x {{menu.icon}}"></i> <span>{{menu.title}}</span></a>
-    </li>
-  </ul>
+  <div id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="card" *ngFor="let menu of menus" >
+      <a *ngIf="menu.action?.length > 0" routerLink="{{ menu.action }}">
+        <div class="card-header text-center" role="tab" id="{{ menu.title }}">
+          <i class="fa fa-2x {{ menu.icon }}"></i>
+          <span>{{ menu.title }}</span>
+        </div>
+      </a>
+      <a *ngIf="menu.action?.length < 1" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{ menu.title }}" aria-expanded="true" attr.aria-controls="['collapse_{{ menu.title }}']">
+        <div class="card-header text-center" role="tab" id="{{ menu.title }}">
+          <i class="fa fa-2x {{ menu.icon }}"></i>
+          <span>{{ menu.title }}</span>
+        </div>
+      </a>
+      <div id="collapse_{{ menu.title }}" class="collapse" role="tabpanel" attr.aria-labelledby="{{ menu.title }}">
+        <a *ngFor="let subMenu of menu.subMenu" routerLink="{{ subMenu.action }}">
+        <div>
+          {{ subMenu.title }}
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </nav>

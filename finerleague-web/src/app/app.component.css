@@ -11,10 +11,18 @@
 
 :host main {
   flex: 1;
+  margin-left: 125px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 :host ftc-nav {
-flex: 0 0 5em;
+  z-index: 1;
+  position: fixed;
+  width: 100px;
+  left: 10px;
+  top: 30%;
 }
 
 @media (min-width: 768px) {
