@@ -1,4 +1,4 @@
 export class Menu {
-    constructor(public title: string, public action: string, public icon: string) {
+    constructor(public title: string, public action: string, public icon: string, public subMenu?: Menu[]) {
     }
 }

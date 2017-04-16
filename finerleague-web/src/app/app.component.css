@@ -3,23 +3,21 @@
   flex-direction: column;
 }
 
-.app-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+:host ftc-nav {
+  position: fixed;
+  width: 7rem;
+  top: 30%;
 }
 
 :host main {
-  flex: 1;
+  margin-left: 8rem;
 }
 
-:host ftc-nav {
-flex: 0 0 5em;
-}
-
-@media (min-width: 768px) {
-  .app-body {
-    flex-direction: row;
-    flex: 1;
+@media (max-width: 768px) {
+  :host ftc-nav {
+    position: relative;
+  }
+  :host main {
+    margin-left: auto;
   }
 }
