@@ -3,31 +3,21 @@
   flex-direction: column;
 }
 
-.app-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-:host main {
-  flex: 1;
-  margin-left: 125px;
-  margin-right: 50px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 :host ftc-nav {
-  z-index: 1;
   position: fixed;
-  width: 100px;
-  left: 10px;
+  width: 7rem;
   top: 30%;
 }
 
-@media (min-width: 768px) {
-  .app-body {
-    flex-direction: row;
-    flex: 1;
+:host main {
+  margin-left: 8rem;
+}
+
+@media (max-width: 768px) {
+  :host ftc-nav {
+    position: relative;
+  }
+  :host main {
+    margin-left: auto;
   }
 }
