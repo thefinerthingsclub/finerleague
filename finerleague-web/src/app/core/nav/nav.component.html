@@ -13,13 +13,16 @@
           <span>{{ menu.title }}</span>
         </div>
       </a>
-      <div id="collapse_{{ menu.title }}" class="collapse" role="tabpanel" attr.aria-labelledby="{{ menu.title }}">
+      <div id="collapse_{{ menu.title }}" class="collapse" role="tabpanel" attr.aria-labelledby="{{ menu.title }}" >
         <a *ngFor="let subMenu of menu.subMenu" routerLink="{{ subMenu.action }}">
-        <div>
-          {{ subMenu.title }}
+        <div class="card">
+          <span>
+            {{ subMenu.title }}
+          </span>
         </div>
         </a>
       </div>
     </div>
   </div>
 </nav>
+
