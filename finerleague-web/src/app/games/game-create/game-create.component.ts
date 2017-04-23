@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Game } from '../shared/game';
 import { GameService } from '../shared/game.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -13,7 +14,10 @@ export class GameCreateComponent {
   gameForm: FormGroup;
 
 
-  constructor(private fb: FormBuilder, private gameService: GameService) {
+  constructor(private fb: FormBuilder,
+              private gameService: GameService,
+              private route: ActivatedRoute,
+              private router: Router) {
     this.createForm();
   }
 
@@ -24,15 +28,18 @@ export class GameCreateComponent {
   }
 
   saveGame() {
-    this.gameService.save(this.prepareGame()).subscribe();
+    this.gameService.save(this.prepareGame())
+      .subscribe(
+        (response) => {
+          console.log('Success Response: ', response);
+          this.router.navigate(['..'], { relativeTo: this.route });
+        },
+        (error) => { console.log('Error happened' + error); }
+      );
   }
 
   prepareGame() {
-    let game: Game = new Game(
-      null,
-      this.gameForm.value.name,
-      null
-      );
+    let game: Game = new Game(null, this.gameForm.value.name, null);
     return game;
   }
 
