@@ -2,9 +2,8 @@
 
 <form [formGroup]="gameForm" novalidate>
   <div class="form-group">
-    <label class="center-block">Name:
-      <input class="form-control" formControlName="name">
-    </label>
+    <label class="center-block">Name:</label>
+    <input class="form-control" formControlName="name">
   </div>
   <button type="button" class="btn btn-primary" (click)="saveGame()">Save</button>
   <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
