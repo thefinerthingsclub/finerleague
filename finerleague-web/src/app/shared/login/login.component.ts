@@ -7,8 +7,7 @@ import {FormGroup, FormControl, FormBuilder, Validators} from "@angular/forms";
 
 
 @Component({
-  moduleId: module.id,
-  selector: 'fl-login',
+  selector: 'ftc-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

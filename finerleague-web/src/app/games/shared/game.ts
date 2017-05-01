@@ -4,7 +4,7 @@ export class Game {
   private _name: string;
 
   constructor(id: string, name: string, image: string) {
-    if(id){
+    if (id) {
       this._id = id;
     }
     this._name = name;
@@ -32,7 +32,11 @@ export class Game {
   }
 
   json() {
-    return JSON.stringify(this);
+    return {
+      id: this.id,
+      name: this.name,
+      image: this.image
+    };
   }
 
   clone() {

@@ -17,5 +17,7 @@ hs_err_pid*
 .settings/
 .classpath
 **/*.iml
+*.iws
+*.ipr
 **/target/**
 **/node_modules

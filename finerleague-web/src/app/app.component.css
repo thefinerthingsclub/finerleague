@@ -1,0 +1,32 @@
+.app {
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+:host ftc-spinner {
+  position: fixed;
+  width: 7rem;
+  z-index: 1;
+  top: 24%;
+  left: 1.5%;
+}
+
+:host ftc-nav {
+  position: fixed;
+  width: 7rem;
+  z-index: 1;
+  top: 30%;
+}
+
+:host main {
+  margin-left: 8rem;
+}
+
+@media (max-width: 768px) {
+  :host ftc-nav {
+    position: relative;
+  }
+  :host main {
+    margin-left: auto;
+  }
+}

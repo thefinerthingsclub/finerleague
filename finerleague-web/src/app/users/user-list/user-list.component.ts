@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoggerService } from '../../core/logger.service';
 
 @Component({
-  moduleId: module.id,
-  selector: 'user-list',
+  selector: 'ftc-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })

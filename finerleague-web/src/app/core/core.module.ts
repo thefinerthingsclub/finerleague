@@ -1,6 +1,6 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
-import { SharedModule }     from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
 import { HeaderComponent } from './header/header.component';
@@ -22,10 +22,12 @@ import {BaseRequestOptions} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
 
 
+import {AppRoutingModule} from "../app-routing.module";
+
 
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule, AppRoutingModule
   ],
   exports: [HeaderComponent, FooterComponent, NavComponent, SpinnerComponent],
   declarations: [HeaderComponent, FooterComponent, NavComponent, SpinnerComponent],

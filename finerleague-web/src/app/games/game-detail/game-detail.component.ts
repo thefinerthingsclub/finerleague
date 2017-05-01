@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Game } from '../shared/game';
 import { GameService } from '../shared/game.service';
-import {Observable} from 'rxjs/Observable';
+
 import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 @Component({
-  moduleId: module.id,
-  selector: 'game-detail',
+  selector: 'ftc-game-detail',
   templateUrl: './game-detail.component.html',
   styleUrls: ['./game-detail.component.css']
 })
@@ -33,4 +32,16 @@ export class GameDetailComponent implements OnInit {
     });
   }
 
+  delete(id: string) {
+    let confirmation = window.confirm('Are you sure you want to delete this game?');
+    if (confirmation) {
+      this.service.delete(id).subscribe(res => {
+        if (res.ok) {
+          this.router.navigate(['/games']);
+        }else {
+          alert('Couldn\'t delete 💩');
+        }
+      });
+    }
+  }
 }

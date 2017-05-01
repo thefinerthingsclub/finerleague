@@ -1,15 +1,11 @@
-<div class="app">
-  <fl-header></fl-header>
-  <main>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav">
-          <li><a [routerLink]="['/games']">Games</a></li>
-          <li><a [routerLink]="['/users']">Users</a></li>
-        </ul>
-      </div>
-    </nav>
-    <router-outlet></router-outlet>
-  </main>
-  <fl-footer></fl-footer>
+<div class="app d-flex">
+  <ftc-header></ftc-header>
+  <div class="app-body">
+    <ftc-nav></ftc-nav>
+    <main class="p-4">
+      <ftc-spinner></ftc-spinner>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  <ftc-footer></ftc-footer>
 </div>

@@ -4,13 +4,13 @@ import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class BaseService {
-  protected rootContext: string;
+  protected rootContext: string = '';
 
   constructor(protected http: Http) {
-    this.rootContext = location.pathname.split("/").filter(n => n)[0] || "";
-    if(this.rootContext.length > 0){
-      this.rootContext = "/" + this.rootContext;
-    }
+    // this.rootContext = location.pathname.split('/').filter(n => n)[0] || '';
+    // if (this.rootContext.length > 0) {
+    //   this.rootContext = '/' + this.rootContext;
+    // }
   }
 
   protected getOptions(): RequestOptions {

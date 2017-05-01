@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Game } from '../shared/game';
 import { GameService } from '../shared/game.service';
 import { SpinnerService } from '../../core/spinner/spinner.service';
 import { LoggerService } from '../../core/logger.service';
 
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 @Component({
-  moduleId: module.id,
-  selector: 'game-list',
+  selector: 'ftc-game-list',
   templateUrl: './game-list.component.html',
   styleUrls: ['./game-list.component.css']
 })
@@ -25,29 +23,37 @@ export class GameListComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private spinnerService: SpinnerService
-  ) {}
+  ) { }
 
   ngOnInit() {
-      this.loggerService.log('... initializing game list component.');
-      this.spinnerService.show();
-      this.isRequesting = true;
+    this.loggerService.log('... initializing game list component.');
+    this.spinnerService.show();
+    this.isRequesting = true;
 
-      this.service.findAll()
-          .subscribe(games => {
-            this.games = games;
+    this.service.findAll()
+      .subscribe(games => {
+        this.games = games;
 
-            //TODO remove this part in real app leaving the hide of the spinner.
-            var that = this;
-            setTimeout(function(){
-              that.spinnerService.hide();
-            }, 3000);
-          }, err => {
-              // Log errors if any
-              console.log(err);
-          });
+        //TODO remove this part in real app leaving the hide of the spinner.
+        var that = this;
+        setTimeout(function() {
+          that.spinnerService.hide();
+        }, 3000);
+      }, err => {
+        // Log errors if any
+        console.log(err);
+      });
   }
 
-  onSelect(game: Game) {
-    this.router.navigate(['/games/detail', game.id]);
+  delete(id: string) {
+    let confirmation = window.confirm('Are you sure you want to delete this game?');
+    if (confirmation) {
+      this.service.delete(id).subscribe(res => {
+        if (res.ok) {
+          let index = this.games.findIndex(game => game.id === id);
+          this.games.splice(index, 1);
+        }
+      });
+    }
   }
 }

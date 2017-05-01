@@ -9,9 +9,9 @@ export interface SpinnerState {
 export class SpinnerService {
     private spinnerSubject = new Subject<SpinnerState>();
     spinnerState = this.spinnerSubject.asObservable();
-  
+
     constructor() { }
-  
+
     show() {
       this.spinnerSubject.next(<SpinnerState>{ show: true });
     }

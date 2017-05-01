@@ -4,8 +4,7 @@ import { LoggerService } from '../logger.service';
 import { SpinnerState, SpinnerService } from './spinner.service';
 
 @Component({
-  moduleId: module.id,
-  selector: 'dmfa-spinner',
+  selector: 'ftc-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.css']
 })
