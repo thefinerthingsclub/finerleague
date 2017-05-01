@@ -14,11 +14,13 @@ import { LoggerService } from './logger.service';
 import { ExceptionService } from './exception.service';
 import { UserProfileService } from './user-profile.service';
 import {AuthenticationService} from "./authentication.service";
+import {AuthGuard} from "./auth.guard";
 
 // used to create fake backend
 import {fakeBackendProvider} from "../shared/fake-backend";
 import {BaseRequestOptions} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
+
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import {MockBackend} from "@angular/http/testing";
     SpinnerService,
     UserProfileService,
     AuthenticationService,
+    AuthGuard,
 
     // providers used to create fake backend
     fakeBackendProvider,
