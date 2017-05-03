@@ -12,6 +12,8 @@ export interface IAuth{
 @Injectable()
 export class AuthenticationService {
 
+  private authenticated:boolean = false;
+
   constructor(
     private http: Http,
     private loggerService: LoggerService
@@ -19,7 +21,6 @@ export class AuthenticationService {
 
 
   login(auth: IAuth){
-      //TODO login method
       this.loggerService.log(`Se ha llamado al login con ${auth.username} y ${auth.password}`);
       return this.http.post('/api/authenticate', JSON.stringify({ username: auth.username, password: auth.password }))
         .map((response: Response) => {
@@ -28,6 +29,7 @@ export class AuthenticationService {
           if (user && user.token) {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('currentUser', JSON.stringify(user));
+            this.authenticated = true;
           }
       });
 
@@ -37,7 +39,8 @@ export class AuthenticationService {
   logout(){
       this.loggerService.log(`Se ha llamado al logout`);
       //TODO logout method
-      //localStorage.removeItem('currentUser');
+      localStorage.removeItem('currentUser');
+      this.authenticated = false;
   }
 }
 

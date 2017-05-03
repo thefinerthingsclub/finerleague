@@ -14,6 +14,7 @@ import {FormGroup, FormControl, FormBuilder, Validators} from "@angular/forms";
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  returnUrl: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +26,12 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+    // reset login status
+    this.authenticationService.logout();
+
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
     this.loggerService.log('... initializing login component from shared module.');
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -40,10 +47,12 @@ export class LoginComponent implements OnInit {
     if (valid){
       this.authenticationService.login(value).subscribe(
         data => {
-          console.log(`retorno OK`);
+          console.log(`submit OK`);
+          console.log("return " + this.returnUrl);
+          this.router.navigate([this.returnUrl]);
         },
         error => {
-          console.log('retorno erroneo');
+          console.log('submit error');
         }
       );
     }

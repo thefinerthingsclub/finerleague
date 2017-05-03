@@ -14,8 +14,8 @@ export class AuthGuard implements CanActivate {
     }
 
     // not logged in so redirect to login page with the return url
-    console.log("Acceso indebido")
-    this.router.navigate(['/login']);
+    console.log("access denied!!!")
+    this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
     return false;
   }
 }
